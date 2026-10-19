@@ -62,10 +62,10 @@ button,select{font-family:var(--f-body)}
 .hero{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--line);
   background:radial-gradient(90% 70% at 62% 100%, rgba(228,70,30,.75), rgba(142,38,14,.35) 45%, rgba(13,12,12,0) 75%), #110E0D}
 .stage{position:relative;padding:clamp(18px,3vw,28px) clamp(14px,3vw,28px) 0;min-height:0;display:flex;flex-direction:column;align-items:center}
-.kicker{position:relative;z-index:1;margin:0;font-family:var(--f-display);font-weight:600;text-transform:uppercase;font-size:clamp(16px,3.3vw,30px);letter-spacing:.005em;line-height:1.05;text-align:center;color:var(--ink)}
+.kicker{position:relative;z-index:1;margin:0 0 clamp(14px,2.4vw,24px);max-width:18em;text-wrap:balance;font-family:var(--f-display);font-weight:700;text-transform:uppercase;font-size:clamp(30px,6.6vw,62px);letter-spacing:.005em;line-height:1.05;text-align:center;color:var(--ink)}
 .giant{position:relative;z-index:1;margin:4px 0 0;width:100%;font-family:var(--f-display);font-weight:700;text-transform:uppercase;line-height:.86;letter-spacing:-.01em;font-size:min(16.2vw,150px);color:#F7E6E0;text-align:center;white-space:nowrap}
 .giant span{display:inline-block}
-.me{position:relative;z-index:2;display:block;width:min(100%,760px);height:auto;margin:-1.5% auto 0;border-radius:14px 14px 0 0;box-shadow:0 -10px 60px rgba(228,70,30,.25)}
+.me{position:relative;z-index:2;display:block;width:min(100%,760px);height:auto;margin:0 auto;border-radius:14px 14px 0 0;box-shadow:0 -10px 60px rgba(228,70,30,.25)}
 .ko-side{position:absolute;z-index:1;left:clamp(14px,3vw,28px);bottom:clamp(16px,3vw,28px);font-family:var(--f-ko);font-weight:800;font-size:clamp(14px,2.2vw,18px);letter-spacing:.3em;color:rgba(245,234,230,.55);writing-mode:vertical-rl}
 .feats{position:relative;z-index:3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);background:rgba(13,12,12,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .feat{display:flex;gap:12px;align-items:center;padding:14px clamp(12px,2vw,20px);font-size:14px;line-height:1.3;color:var(--ink-2)}
@@ -135,16 +135,9 @@ footer{font-size:13px;color:var(--muted);text-align:center}
 </head>
 <body>
 <main class="wrap">
-  <div class="byline">
-    <img class="ava" src="img/kostya-ava.webp" alt="" width="96" height="96">
-    <span><small>Актёр Netflix и Disney+</small><b>Константин Романенко</b></span>
-  </div>
-  <h1 class="page-title">Словарь актёра и модели в Корее</h1>
-
   <section class="hero" aria-label="О словаре">
     <div class="stage">
-      <p class="kicker">810 слов, которые нужны на площадке</p>
-      <p class="giant" aria-hidden="true"><span id="giantText">Английский</span></p>
+      <h1 class="kicker">810 слов, которые нужны актёру и модели в Южной Корее</h1>
       <img class="me" src="img/kostya-portrait.webp" alt="Константин Романенко" width="926" height="834">
           </div>
     <div class="feats">
