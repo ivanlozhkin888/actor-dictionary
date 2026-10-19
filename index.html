@@ -1,0 +1,1007 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Сеульский словарь актёра</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&family=Nanum+Myeongjo:wght@700;800&display=swap">
+<style>
+/* Layout: one lesson at a time like a page of a hanji study notebook — dancheong band on top, lesson tabs that scroll sideways, red seal stamp when a lesson is complete */
+:root{
+  --paper:#F3F2EC; --card:#FBFAF6; --ink:#1D2130; --muted:#646a7a; --line:#dcdbd2;
+  --blue:#2A4A94; --blue-soft:#e3e8f4; --red:#C3372F; --jade:#2F8070; --gold:#D9A43A;
+  --f-display:"Lora",Georgia,"Times New Roman",serif;
+  --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-ko:"Nanum Myeongjo","AppleMyungjo","Batang",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#11141d; --card:#191d29; --ink:#ece9e1; --muted:#9aa0b0; --line:#2b3040;
+  --blue:#8fa8ec; --blue-soft:#232b44; --red:#e3605a; --jade:#5fb8a5; --gold:#e7bd61; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#11141d; --card:#191d29; --ink:#ece9e1; --muted:#9aa0b0; --line:#2b3040;
+  --blue:#8fa8ec; --blue-soft:#232b44; --red:#e3605a; --jade:#5fb8a5; --gold:#e7bd61; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5}
+.band{height:10px;background:
+  linear-gradient(90deg,var(--blue) 0 20%,var(--red) 20% 40%,var(--gold) 40% 60%,var(--jade) 60% 80%,var(--ink) 80% 100%)}
+.wrap{max-width:640px;margin:0 auto;padding-inline:16px;padding-block:20px 40px;display:flex;flex-direction:column;gap:18px}
+
+header{display:flex;flex-direction:column;gap:6px;position:relative}
+.ko-mark{font-family:var(--f-ko);font-weight:800;color:var(--red);font-size:15px;letter-spacing:.2em}
+h1{font-family:var(--f-display);font-weight:600;font-size:clamp(28px,7vw,38px);line-height:1.1;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:0;font-size:15px}
+
+.progress{margin:0;font-size:14px;color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.pick{flex:1 1 220px;min-width:0;appearance:auto}
+.bar{flex:1;height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--jade);transition:width .3s}
+
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);margin-inline:-16px;padding:10px 16px;border-bottom:1px solid var(--line)}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;scroll-snap-type:x proximity}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;scroll-snap-align:center;min-width:44px;height:44px;border-radius:22px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);
+  font:600 15px var(--f-body);font-variant-numeric:tabular-nums;cursor:pointer;position:relative;padding:0 12px}
+.chip.base{border-style:dashed}
+.chip.on{background:var(--blue);border-color:var(--blue);color:var(--card)}
+.chip.done::after{content:"";position:absolute;top:3px;right:3px;width:8px;height:8px;border-radius:50%;background:var(--red)}
+.chip:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+.toggle{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 14px;font:600 14px var(--f-body);cursor:pointer}
+.toggle[aria-pressed="true"]{border-color:var(--blue);background:var(--blue-soft);color:var(--blue)}
+
+.lesson{background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden;position:relative}
+.lesson-head{padding:20px 18px 16px;display:grid;grid-template-columns:1fr auto;gap:4px 12px;border-bottom:1px solid var(--line);
+  background-image:radial-gradient(circle at 100% 0,var(--blue-soft),transparent 60%)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+.lesson h2{grid-column:1;font-family:var(--f-display);font-weight:600;font-size:23px;line-height:1.2;margin:0;text-wrap:balance}
+.ko-title{grid-column:2;grid-row:1/span 2;align-self:center;font-family:var(--f-ko);font-weight:800;font-size:28px;color:var(--line);writing-mode:vertical-rl;letter-spacing:.1em}
+.count{grid-column:1;font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.stamp{position:absolute;top:14px;right:54px;width:62px;height:62px;border:3px solid var(--red);border-radius:8px;color:var(--red);
+  font-family:var(--f-ko);font-weight:800;font-size:19px;display:grid;place-items:center;transform:rotate(-12deg) scale(.6);opacity:0;transition:.35s;pointer-events:none;line-height:1}
+.lesson.complete .stamp{opacity:.85;transform:rotate(-12deg) scale(1)}
+
+.note{margin:0;padding:12px 18px;font-size:14px;color:var(--muted);background:var(--paper);border-bottom:1px solid var(--line)}
+ol{list-style:none;margin:0;padding:0}
+.sep{padding:12px 18px 8px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.word{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:9px 10px 9px 14px;border-bottom:1px solid var(--line)}
+.word:last-child{border-bottom:0}
+.check{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);background:transparent;cursor:pointer;display:grid;place-items:center;padding:0;color:var(--card)}
+.check svg{width:12px;height:12px;opacity:0}
+.word.learned .check{background:var(--jade);border-color:var(--jade)}
+.word.learned .check svg{opacity:1}
+.text{min-width:0;cursor:default}
+.text{line-height:1.35;font-size:14px}
+.en{font-family:var(--f-display);font-weight:600;font-size:16px}
+.tr{font-size:12.5px;color:var(--blue);font-weight:600}
+.ru{color:var(--muted)}
+.dash{color:var(--line);margin:0 2px}
+.word.learned .en{color:var(--muted)}
+body.quiz .ru{color:transparent;background:var(--line);border-radius:4px;cursor:pointer;user-select:none}
+body.quiz .word.shown .ru{color:var(--muted);background:none}
+body.quiz .text{cursor:pointer}
+.say{width:32px;height:32px;border-radius:50%;border:0;background:var(--blue-soft);color:var(--blue);cursor:pointer;display:grid;place-items:center}
+.say svg{width:15px;height:15px}
+.no-tts .say{display:none}
+
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pager button{border:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:6px;padding:14px;font:600 15px var(--f-body);cursor:pointer}
+.pager button:last-child{background:var(--ink);color:var(--paper)}
+.pager button:disabled{opacity:.3;cursor:default}
+footer{font-size:13px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="band" aria-hidden="true"></div>
+<main class="wrap">
+  <header>
+    <span class="ko-mark">배우 · 모델 · 영어</span>
+    <h1>Английский для актёра и модели в Корее</h1>
+    <p class="sub">27 уроков по 30 слов · от нуля до площадки</p>
+    <p class="progress" id="total">Выучено 0 из 810</p>
+  </header>
+
+  <div class="tools">
+    <select class="toggle pick" id="pick" aria-label="Выбрать урок"></select>
+    <button class="toggle" id="quiz" aria-pressed="false">Скрыть перевод</button>
+    <button class="toggle" id="reset">Сбросить урок</button>
+  </div>
+
+  <article class="lesson" id="lesson" aria-live="polite"></article>
+
+  <div class="pager">
+    <button id="prev">← Назад</button>
+    <button id="next">Дальше →</button>
+  </div>
+  <footer>Отметки сохраняются в этом браузере. Нажмите на динамик, чтобы услышать слово.</footer>
+</main>
+
+<script>
+const L=[
+{ko:"인사",t:"Приветствия и вежливость",n:"Уроки 1–7 — база. Под словом подсказка, как оно читается.",w:`hello / hi|хэлоу / хай|здравствуйте / привет
+good morning|гуд мóнинг|доброе утро
+good afternoon|гуд афтэнýн|добрый день
+good evening|гуд úвнинг|добрый вечер
+goodbye / bye|гудбáй / бай|до свидания / пока
+see you tomorrow|си ю тумóроу|до завтра
+please|плиз|пожалуйста (просьба)
+thank you / thanks|сэнк ю / сэнкс|спасибо
+you're welcome|юр уэлкам|пожалуйста (в ответ)
+sorry|сóри|извините
+excuse me|икскьюз ми|простите (привлечь внимание)
+yes|йес|да
+no|ноу|нет
+okay / OK|оукéй|хорошо, ладно
+maybe|мéйби|может быть
+of course|ов корс|конечно
+my name is…|май нэйм из|меня зовут…
+I am from Russia|ай эм фром рáша|я из России
+I don't understand|ай доунт андэстэнд|я не понимаю
+I understand|ай андэстэнд|я понимаю
+I don't know|ай доунт ноу|я не знаю
+again, please|эгéн, плиз|ещё раз, пожалуйста
+slowly, please|слóули, плиз|медленнее, пожалуйста
+help|хэлп|помощь / помогите
+I need help|ай нид хэлп|мне нужна помощь
+what?|уот|что?
+who?|ху|кто?
+where?|уэа|где?
+when?|уэн|когда?
+why?|уай|почему?`},
+{ko:"질문",t:"Вопросы, местоимения, числа",w:`how?|хау|как?
+how much?|хау мач|сколько стоит?
+how long?|хау лонг|как долго?
+which?|уич|который?
+I|ай|я
+you|ю|ты / вы
+he / she|хи / ши|он / она
+we|уи|мы
+they|зэй|они
+my / your|май / ёр|мой / твой, ваш
+this / that|зис / зэт|это / то
+here / there|хиэ / зэа|здесь / там
+and|энд|и
+but|бат|но
+or|ор|или
+with / without|уиз / уизáут|с / без
+for|фор|для
+very|вéри|очень
+Mr. / Ms.|мúстэр / миз|господин / госпожа
+nice to meet you|найс ту мит ю|приятно познакомиться
+one|уан|один
+two|ту|два
+three|сри|три
+four|фор|четыре
+five|файв|пять
+six|сикс|шесть
+seven|сэвн|семь
+eight|эйт|восемь
+nine|найн|девять
+ten|тэн|десять`},
+{ko:"시간",t:"Числа, время, дни",w:`eleven / twelve|илэвн / туэлв|одиннадцать / двенадцать
+twenty|туэнти|двадцать
+thirty|сёрти|тридцать
+fifty|фифти|пятьдесят
+hundred|хáндрэд|сто
+thousand|сáузэнд|тысяча
+million|мúльен|миллион
+first / second / last|фёрст / сэкэнд / ласт|первый / второй / последний
+time|тайм|время
+what time is it?|уот тайм из ит|который час?
+o'clock|эклóк|ровно: five o'clock = 5:00
+half past|хаф паст|половина: half past five = 5:30
+minute|мúнит|минута
+hour|áуэ|час
+day|дэй|день
+week|уик|неделя
+month|манс|месяц
+year|йиэ|год
+today|тудэй|сегодня
+tomorrow|тумóроу|завтра
+yesterday|йéстэдэй|вчера
+now|нау|сейчас
+later|лэйтэ|позже
+soon|сун|скоро
+morning|мóнинг|утро
+afternoon|афтэнýн|день (после обеда)
+evening|úвнинг|вечер
+night|найт|ночь
+Monday|мáндэй|понедельник
+Tuesday|тьюздэй|вторник`},
+{ko:"요일",t:"Дни недели и первые глаголы",w:`Wednesday|уэнздэй|среда
+Thursday|сёздэй|четверг
+Friday|фрáйдэй|пятница
+Saturday|сэтэдэй|суббота
+Sunday|сáндэй|воскресенье
+weekend|уúкэнд|выходные
+date|дэйт|дата
+money|мáни|деньги
+won ₩|уон|вона, валюта Кореи
+phone number|фоун нáмбэ|номер телефона
+be: am / is / are|би: эм / из / ар|быть
+have|хэв|иметь
+do|ду|делать
+can / can't|кэн / кэнт|могу / не могу
+want|уонт|хотеть
+need|нид|нужно
+like|лайк|нравиться
+go|гоу|идти, ехать
+come|кам|приходить
+stop|стоп|остановиться
+wait|уэйт|ждать
+start|старт|начинать
+finish|фúниш|заканчивать
+see|си|видеть
+look|лук|смотреть
+watch|уоч|смотреть, наблюдать
+hear|хиэ|слышать
+listen|лисн|слушать
+say|сэй|сказать
+speak|спик|говорить (на языке)`},
+{ko:"동사",t:"Глаголы",w:`tell|тэл|сказать кому-то
+ask|аск|спросить, попросить
+answer|áнсэ|отвечать
+read|рид|читать
+write|райт|писать
+know|ноу|знать
+think|сынк|думать
+understand|андэстэнд|понимать
+try|трай|пробовать
+work|уёрк|работать
+walk|уок|идти пешком
+run|ран|бежать
+sit down|сит даун|сесть
+stand up|стэнд ап|встать
+turn|тёрн|повернуться
+move|мув|двигаться
+smile|смайл|улыбаться
+open / close|óупэн / клоуз|открыть / закрыть
+put on / take off|пут он / тэйк оф|надеть / снять
+change|чэйндж|менять, переодеться
+give|гив|давать
+take|тэйк|брать
+bring|бринг|приносить
+eat|ит|есть
+drink|дринк|пить
+sleep|слип|спать
+pay|пэй|платить
+call|кол|звонить, звать
+send|сэнд|отправить
+let's go|лэтс гоу|пойдём, поехали`},
+{ko:"방향",t:"Прилагательные и направления",w:`good / bad|гуд / бэд|хороший / плохой
+big / small|биг / смол|большой / маленький
+long / short|лонг / шорт|длинный / короткий
+tall|тол|высокий (о человеке)
+new / old|нью / оулд|новый / старый
+hot / cold|хот / коулд|жарко / холодно
+fast / slow|фаст / слоу|быстрый / медленный
+easy / difficult|úзи / дúфикалт|лёгкий / трудный
+beautiful|бьютифул|красивый
+happy / sad|хэ́пи / сэд|счастливый / грустный
+angry|э́нгри|злой, сердитый
+tired|тáйэд|уставший
+hungry / thirsty|хáнгри / сёрсти|голодный / хочу пить
+ready|рэ́ди|готов
+busy / free|бúзи / фри|занят / свободен
+right / wrong|райт / ронг|правильно / неправильно
+same / different|сэйм / дúфрэнт|такой же / другой
+more / less|мор / лэс|больше / меньше
+a little|э литл|немного
+a lot|э лот|много
+all|ол|все, всё
+black / white|блэк / уайт|чёрный / белый
+red / blue / green|рэд / блу / грин|красный / синий / зелёный
+light / dark|лайт / дарк|светлый / тёмный
+left|лэфт|налево
+right|райт|направо
+straight|стрэйт|прямо
+up / down|ап / даун|вверх / вниз
+front / back|франт / бэк|перед / зад
+in front of|ин франт ов|перед чем-то`},
+{ko:"장소",t:"Места и начало кастинга",split:20,splitLabel:"Рабочая лексика начинается",w:`behind|бихáйнд|позади
+next to|нэкст ту|рядом с
+inside / outside|инсáйд / аутсáйд|внутри / снаружи
+near / far|ниэ / фар|близко / далеко
+here, please|хиэ, плиз|сюда, пожалуйста
+room|рум|комната
+door|дор|дверь
+toilet / restroom|тóйлэт / рэ́струм|туалет
+office|óфис|офис
+building|бúлдинг|здание
+floor|флор|этаж, пол
+street|стрит|улица
+station|стэйшн|станция
+airport|эапорт|аэропорт
+hotel|хоутэ́л|отель
+hospital|хóспитл|больница
+water|уóтэ|вода
+food|фуд|еда
+coffee|кóфи|кофе
+bag / phone / passport|бэг / фоун / пáспорт|сумка / телефон / паспорт
+audition||прослушивание
+casting||кастинг
+casting director||кастинг-директор
+casting call||объявление о кастинге
+open call||открытый кастинг
+go-see||визит-знакомство к клиенту (у моделей)
+callback||повторное прослушивание
+self-tape||самопроба на видео
+screen test||кинопроба
+chemistry read||проба на химию с партнёром`},
+{ko:"캐스팅",t:"Кастинг",w:`table read||читка сценария за столом
+sides||фрагменты сценария для проб
+monologue||монолог
+cold read||чтение текста без подготовки
+slate||представиться перед камерой
+headshot||портретное фото
+resume / CV||резюме
+portfolio||портфолио
+comp card||композитка, карточка модели
+reel / showreel||шоурил, видеовизитка
+role||роль
+lead role||главная роль
+supporting role||роль второго плана
+cameo||камео, эпизод со звездой
+extra / background actor||массовка
+bit part||эпизодическая роль
+character breakdown||описание персонажа
+to be cast||получить роль
+to book a job||получить заказ
+shortlist||шорт-лист
+on hold / first option||бронь клиента на вашу дату
+release||снятие брони
+confirmed||подтверждено
+requirements||требования
+deadline||крайний срок
+submission||заявка, отправка материалов
+to submit||подать заявку
+to apply||откликнуться
+to prepare||готовиться
+waiting room||комната ожидания`},
+{ko:"연기",t:"Кастинг и актёрское мастерство",w:`number tag||номерок участника
+sign-in sheet||лист регистрации
+first impression||первое впечатление
+feedback||обратная связь
+rejection||отказ
+to be a good fit||подходить для проекта
+type / look||типаж
+foreigner role||роль иностранца
+language skills||знание языков
+to introduce yourself||представиться
+script||сценарий
+screenplay||киносценарий
+scene||сцена
+line||реплика
+dialogue||диалог
+cue||сигнал, реплика-подводка
+to memorize lines||учить текст
+to forget a line||забыть реплику
+to improvise / ad-lib||импровизировать
+character||персонаж
+backstory||предыстория персонажа
+motivation||мотивация
+objective||цель персонажа в сцене
+subtext||подтекст
+emotion||эмоция
+expression||выражение лица
+reaction||реакция
+tone||тон
+delivery||подача текста
+pace||темп`},
+{ko:"연기",t:"Актёрское мастерство",w:`pause||пауза
+timing||чувство ритма, тайминг
+beat||смысловой кусок, короткая пауза
+blocking||разводка мизансцены
+mark||метка на полу
+to hit your mark||встать точно на метку
+eyeline||направление взгляда
+rehearsal||репетиция
+run-through||прогон
+stage||сцена (театральная)
+voice-over||закадровый голос
+dubbing||дубляж
+accent||акцент
+pronunciation||произношение
+body language||язык тела
+gesture||жест
+posture||осанка
+intense||напряжённый, интенсивный
+subtle||тонкий, сдержанный
+natural||естественный
+over the top||переигрывание
+genre||жанр
+drama / K-drama||драма / дорама
+rom-com||романтическая комедия
+thriller||триллер
+villain||злодей
+protagonist||главный герой
+love interest||возлюбленный(ая) героя
+crying scene||сцена со слезами
+kiss scene||сцена поцелуя`},
+{ko:"촬영장",t:"Съёмочная площадка",w:`set||съёмочная площадка
+on set||на площадке
+location||натура, место съёмки
+studio||студия
+call time||время сбора
+call sheet||вызывной лист
+wrap / that's a wrap||конец съёмки
+shoot / shooting day||съёмка / съёмочный день
+director||режиссёр
+assistant director (AD)||помощник режиссёра
+producer||продюсер
+crew||съёмочная группа
+cast||актёрский состав
+co-star||партнёр по съёмкам
+stand-in||дублёр для выставления света
+stunt double||каскадёр-дублёр
+stunt||трюк
+action!||мотор! начали!
+cut!||стоп! снято!
+take||дубль
+one more take||ещё один дубль
+retake||пересъёмка
+from the top||с самого начала
+reset||вернуться на исходные позиции
+standby||приготовиться
+quiet on set!||тишина на площадке!
+rolling||камера пишет
+break||перерыв
+lunch break||обеденный перерыв
+catering||кейтеринг, питание`},
+{ko:"카메라",t:"Площадка и камера",w:`craft services||стол с перекусами
+trailer||трейлер, гримваген
+dressing room||гримёрка
+holding area||зона ожидания актёров
+props||реквизит
+costume||костюм
+wardrobe||костюмерная
+continuity||непрерывность деталей между кадрами
+script supervisor||скрипт-супервайзер
+music video (MV)||музыкальный клип
+commercial (CF)||реклама (в Корее — CF)
+web drama||веб-дорама
+episode||серия
+season||сезон
+pilot||пилотная серия
+overtime||сверхурочные
+schedule change||изменение графика
+safety||безопасность
+first aid||первая помощь
+behind the scenes (BTS)||закулисье
+camera||камера
+lens||объектив
+frame||кадр
+in frame / out of frame||в кадре / вне кадра
+shot||план, кадр
+close-up||крупный план
+extreme close-up||сверхкрупный план
+medium shot||средний план
+wide shot||общий план
+full shot||в полный рост`},
+{ko:"조명",t:"Камера, свет, звук",w:`over-the-shoulder shot||кадр через плечо
+angle||ракурс
+low angle / high angle||нижний / верхний ракурс
+profile||профиль
+three-quarter view||вполоборота
+focus||фокус
+out of focus||не в фокусе
+zoom in / zoom out||приблизить / отдалить
+pan||панорама (поворот камеры)
+tracking shot||съёмка с движения
+dolly||операторская тележка
+crane / jib||кран
+drone shot||съёмка с дрона
+slow motion||замедленная съёмка
+look into the lens||смотреть прямо в объектив
+don't look at the camera||не смотрите в камеру
+camera operator||оператор
+cinematographer / DP||оператор-постановщик
+lighting||освещение
+key light||рисующий свет
+backlight||контровой свет
+natural light||естественный свет
+shadow||тень
+reflector||отражатель
+gaffer||главный осветитель
+microphone / mic||микрофон
+lav mic / pin mic||петличка
+boom mic||микрофон на «удочке»
+sound check||проверка звука
+audio||звук`},
+{ko:"런웨이",t:"Монтаж и подиум",w:`background noise||посторонний шум
+earpiece / in-ear||наушник-суфлёр
+monitor||монитор
+playback||воспроизведение записи
+footage||отснятый материал
+editing||монтаж
+post-production||постпродакшн
+color grading||цветокоррекция
+green screen||хромакей
+CGI / VFX||компьютерная графика, спецэффекты
+runway / catwalk||подиум
+fashion show||показ мод
+Seoul Fashion Week||Сеульская неделя моды
+designer||дизайнер
+collection||коллекция
+season SS / FW||весна-лето / осень-зима
+walk||походка, проход
+to walk the show||участвовать в показе
+pose at the end||позировать в конце подиума
+turn||разворот
+stride||шаг
+rhythm||ритм
+line-up||порядок выхода моделей
+opening / closing look||открывающий / закрывающий образ
+finale||финальный выход
+backstage||закулисье
+quick change||быстрое переодевание
+dresser||помощник по переодеванию
+rehearsal walk||репетиция прохода
+front row||первый ряд`},
+{ko:"모델",t:"Модельный бизнес",w:`buyer||байер
+editorial||съёмка для журнала
+commercial modeling||коммерческая съёмка
+lookbook||лукбук
+e-commerce shoot||съёмка для интернет-магазина
+campaign||рекламная кампания
+catalog||каталог
+brand||бренд
+ambassador||амбассадор
+muse||муза
+showroom||шоурум
+fitting model||модель для примерок
+parts model||модель частей тела (руки, ноги)
+beauty model||бьюти-модель
+fitness model||фитнес-модель
+plus-size model||модель плюс-сайз
+new face||новое лицо
+model card||карточка модели
+mother agency||материнское агентство
+booker||букер
+scout||скаут
+to be scouted||быть замеченным скаутом
+test shoot||тестовая съёмка
+polaroids / digitals||снимки без макияжа
+trend||тренд
+high fashion||высокая мода
+streetwear||уличная мода
+luxury||люкс
+influencer||инфлюенсер
+fashion week schedule||расписание недели моды`},
+{ko:"화보",t:"Фотосессия и команды фотографа",w:`photo shoot||фотосессия
+photographer||фотограф
+photo assistant||ассистент фотографа
+creative director||креативный директор
+art director||арт-директор
+mood board||мудборд
+concept||концепция
+reference||референс
+backdrop||фон
+flash||вспышка
+pose||поза
+to pose||позировать
+hold it!||замри!
+relax||расслабься
+chin up / chin down||подбородок выше / ниже
+tilt your head||наклони голову
+turn left / turn right||повернись налево / направо
+shoulders down||опусти плечи
+lean forward / lean back||наклонись вперёд / назад
+shift your weight||перенеси вес
+step forward / step back||шаг вперёд / назад
+hands on hips||руки на бёдра
+soften your face||смягчи лицо
+eyes to me||смотри на меня
+look away||отведи взгляд
+smile with your eyes||улыбнись глазами
+give me energy||дай больше энергии
+more attitude||больше характера
+move freely||двигайся свободно
+keep changing||постоянно меняй позы`},
+{ko:"화보",t:"Фотосессия и параметры",w:`that's it! / perfect!||вот так! / идеально!
+one more||ещё один кадр
+jump shot||кадр в прыжке
+candid||непостановочный кадр
+headshot crop||кадрирование по плечи
+full body||в полный рост
+flattering||выигрышный (ракурс, свет)
+retouching||ретушь
+selects||отобранные кадры
+raw files||исходники
+outdoor shoot||съёмка на улице
+golden hour||«золотой час»
+fan / wind machine||вентилятор
+outfit change||смена образа
+cover||обложка
+magazine spread||разворот в журнале
+pictorial||фотосет для журнала (화보)
+tethered shooting||съёмка с выводом на экран
+check the screen||посмотреть кадры на экране
+usage||права на использование фото
+measurements||параметры
+height||рост
+weight||вес
+bust / chest||обхват груди
+waist||талия
+hips||бёдра
+inseam||длина ноги по внутреннему шву
+shoe size||размер обуви
+dress size||размер одежды
+figure / body shape||фигура`},
+{ko:"외모",t:"Внешность",w:`slim||стройный
+athletic||спортивный
+tall / petite||высокий / миниатюрный
+face shape||форма лица
+V-line jaw||V-образный подбородок
+small face||маленькое лицо (ценится в Корее)
+features||черты лица
+complexion||цвет лица
+skin tone||тон кожи
+fair / tanned||светлая / загорелая кожа
+freckles||веснушки
+mole||родинка
+scar||шрам
+tattoo||татуировка
+piercing||пирсинг
+eye color||цвет глаз
+double eyelid||двойное веко
+eyebrows||брови
+lips||губы
+cheekbones||скулы
+jawline||линия подбородка
+forehead||лоб
+nose bridge||спинка носа
+teeth / smile||зубы / улыбка
+neck||шея
+shoulders||плечи
+collarbone||ключица
+legs||ноги
+hands / nails||руки / ногти
+proportions||пропорции`},
+{ko:"메이크업",t:"Внешность и макияж",w:`photogenic||фотогеничный
+visual||«визуал», красивая внешность (K-pop)
+image||имидж
+charm||обаяние
+presence||харизма, присутствие в кадре
+to gain / lose weight||набрать / сбросить вес
+diet||диета
+workout||тренировка
+skincare||уход за кожей
+to stay in shape||поддерживать форму
+hair and makeup (HMU)||причёска и макияж
+makeup artist (MUA)||визажист
+hair stylist||парикмахер-стилист
+stylist||стилист
+touch-up||подправить макияж
+foundation||тональный крем
+concealer||консилер
+powder||пудра
+blush||румяна
+contour||контуринг
+highlighter||хайлайтер
+eyeliner||подводка
+eyeshadow||тени
+mascara||тушь
+false lashes||накладные ресницы
+lipstick / lip tint||помада / тинт
+lip gloss||блеск для губ
+no-makeup look||макияж «без макияжа»
+natural makeup||натуральный макияж
+dewy skin||сияющая кожа`},
+{ko:"헤어",t:"Макияж, волосы, стиль",w:`matte||матовый
+glass skin||«стеклянная» кожа
+sunscreen||солнцезащитный крем
+makeup remover||средство для снятия макияжа
+allergy / sensitive skin||аллергия / чувствительная кожа
+hairstyle||причёска
+haircut||стрижка
+bangs||чёлка
+ponytail||хвост
+bun||пучок
+braid||коса
+curls / waves||локоны / волны
+straight hair||прямые волосы
+to dye hair||красить волосы
+bleach||обесцвечивание
+roots||корни волос
+wig||парик
+extensions||наращенные волосы
+hairspray||лак для волос
+curling iron||плойка
+blow-dry||укладка феном
+flyaways||выбившиеся волоски
+nail art / manicure||дизайн ногтей / маникюр
+styling||стайлинг
+concept look||концептуальный образ
+clean look||аккуратный образ
+glam||гламурный образ
+edgy||дерзкий, смелый
+elegant||элегантный
+can you fix my hair?||поправьте мне волосы, пожалуйста`},
+{ko:"피팅",t:"Одежда и примерки",w:`fitting||примерка
+outfit||наряд
+look||образ
+garment||предмет одежды
+sample size||образцовый размер
+fit||посадка
+tight / loose||тесный / свободный
+too long / too short||слишком длинный / короткий
+alterations||подгонка по фигуре
+to pin||заколоть булавками
+tailor||портной
+steamer||отпариватель
+wrinkled||мятый
+zipper||молния
+button||пуговица
+strap||бретелька, ремешок
+sleeve||рукав
+collar||воротник
+hem||подол
+lining||подкладка
+fabric||ткань
+silk / cotton / leather||шёлк / хлопок / кожа
+dress||платье
+suit||костюм
+jacket / blazer||жакет / пиджак
+coat||пальто
+skirt||юбка
+pants / trousers||брюки
+jeans||джинсы
+shirt / blouse||рубашка / блузка`},
+{ko:"의상",t:"Одежда и агентство",w:`knitwear||трикотаж
+swimwear||купальники
+lingerie / underwear||бельё
+nude underwear||бельё телесного цвета
+heels||каблуки
+flats||обувь без каблука
+sneakers||кроссовки
+boots||сапоги, ботинки
+accessories||аксессуары
+jewelry||украшения
+earrings||серьги
+sunglasses||солнцезащитные очки
+bag||сумка
+hat||шляпа, головной убор
+tag / label||бирка / ярлык
+don't damage the clothes||не повредите одежду
+changing room||примерочная
+privacy||личное пространство
+I'm not comfortable with this||мне некомфортно
+does it fit?||подходит по размеру?
+agency||агентство
+entertainment company||развлекательная компания, лейбл
+manager||менеджер
+road manager||сопровождающий менеджер
+agent||агент
+representation||представительство агентом
+contract||контракт
+to sign a contract||подписать контракт
+terms and conditions||условия
+clause||пункт договора`},
+{ko:"계약",t:"Контракты и деньги",n:"Прежде чем что-то подписывать, просите английскую версию договора и показывайте её юристу.",w:`exclusive / non-exclusive||эксклюзивный / неэксклюзивный
+contract period||срок контракта
+renewal||продление
+termination||расторжение
+penalty / breach of contract||неустойка / нарушение договора
+NDA||соглашение о неразглашении
+lawyer||юрист
+fee||гонорар
+day rate / hourly rate||ставка за день / за час
+budget||бюджет
+payment||оплата
+invoice||счёт
+commission||комиссия агентства
+percentage / split||процент / раздел дохода
+deduction||вычет
+tax / withholding tax||налог / удерживаемый налог
+gross / net||до / после вычетов
+advance||аванс
+expenses||расходы
+model apartment||квартира от агентства
+debt to the agency||долг перед агентством
+to negotiate||вести переговоры
+buyout||выкуп прав
+usage rights||права на использование
+image rights||права на изображение
+territory||территория использования
+royalties||роялти
+visa||виза
+E-6 visa||виза E-6 для артистов и моделей
+work permit||разрешение на работу`},
+{ko:"일정",t:"Документы и расписание",w:`ARC (Alien Registration Card)||карта иностранца в Корее
+sponsor||спонсор визы
+insurance||страховка
+bank account||банковский счёт
+trainee||стажёр, трейни
+debut||дебют
+upfront fee||предоплата (часто признак мошенничества)
+scam||мошенничество
+to read the fine print||читать мелкий шрифт
+can I get it in writing?||можно это письменно?
+schedule||расписание
+booking||заказ, бронь
+availability||свободные даты
+I'm available / not available||я свободен / занят
+to confirm||подтвердить
+to cancel||отменить
+to postpone / reschedule||перенести
+appointment||встреча
+meeting||совещание
+on time||вовремя
+I'm running late||я опаздываю
+early||рано
+address||адрес
+directions||как добраться
+pick-up||забрать на машине
+van||минивэн агентства
+transportation||транспорт
+subway / taxi||метро / такси
+flight||рейс
+accommodation||проживание`},
+{ko:"예절",t:"Логистика и этикет",w:`per diem||суточные
+overseas shoot||зарубежная съёмка
+day off||выходной
+working hours||рабочие часы
+tired / exhausted||устал / вымотан
+sick / unwell||болен / плохо себя чувствую
+emergency||экстренная ситуация
+contact number||контактный номер
+KakaoTalk||КакаоТок, главный мессенджер Кореи
+group chat||групповой чат
+to reply||ответить
+professional||профессиональный
+punctual||пунктуальный
+polite||вежливый
+respect||уважение
+senior / sunbae||старший коллега (сонбэ)
+junior / hoobae||младший коллега (хубэ)
+hierarchy||иерархия
+to bow||поклониться
+greeting||приветствие
+thank you for your hard work||спасибо за работу (수고하셨습니다)
+it's an honor to work with you||для меня честь работать с вами
+could you repeat that?||повторите, пожалуйста
+could you speak slowly?||говорите медленнее, пожалуйста
+what do you mean?||что вы имеете в виду?
+got it / understood||понял(а)
+is this okay?||так нормально?
+sorry for the wait||простите за ожидание
+team dinner / hoesik||командный ужин (хвесик)
+interpreter / translator||устный / письменный переводчик`},
+{ko:"미디어",t:"Медиа и соцсети",w:`interview||интервью
+press conference||пресс-конференция
+press release||пресс-релиз
+journalist / reporter||журналист
+media||СМИ
+promotion||продвижение
+premiere||премьера
+red carpet||красная дорожка
+photo wall / photocall||фотозона
+awards ceremony||церемония награждения
+nominee / nomination||номинант / номинация
+variety show||развлекательное шоу
+talk show||ток-шоу
+reality show||реалити-шоу
+guest appearance||участие в качестве гостя
+live broadcast||прямой эфир
+ratings / viewership||рейтинги / аудитория
+streaming platform||стриминговая платформа
+social media||соцсети
+followers||подписчики
+post / story / reel||пост / сторис / рилс
+caption||подпись к посту
+hashtag||хештег
+engagement||вовлечённость
+sponsored content / PPL||спонсорский контент / продакт-плейсмент
+endorsement||рекламный контракт со звездой
+collaboration (collab)||коллаборация
+fan||фанат
+fandom||фандом
+fan meeting||фанмитинг`},
+{ko:"팬",t:"Фанаты и фразы-спасатели",split:20,splitLabel:"Фразы для первого дня на площадке",w:`fan sign event||автограф-сессия
+autograph||автограф
+anti-fan / hate comments||антифанат / хейт
+rumor||слух
+scandal||скандал
+dating ban||запрет на отношения
+public image||публичный имидж
+reputation||репутация
+private life||частная жизнь
+paparazzi||папарацци
+statement||официальное заявление
+to go viral||стать вирусным
+trending||в трендах
+hallyu / Korean Wave||халлю, корейская волна
+global audience||международная аудитория
+subtitles||субтитры
+filmography||фильмография
+breakthrough role||прорывная роль
+career goals||карьерные цели
+I'm grateful for this opportunity||я благодарен(на) за эту возможность
+Where should I stand?||где мне встать?
+Which way should I look?||куда мне смотреть?
+I'm ready.||я готов(а).
+I need a minute.||мне нужна минутка.
+Can I take a break?||можно перерыв?
+Can I have some water?||можно воды?
+Where is the dressing room?||где гримёрка?
+How long will it take?||сколько это займёт?
+Can I see the script?||можно посмотреть сценарий?
+Please ask before touching me.||пожалуйста, спросите, прежде чем меня трогать.`}
+].map(l=>({...l,items:l.w.trim().split("\n").map(r=>{const[en,tr,ru]=r.split("|");return{en,tr,ru}})}));
+
+const KEY="seoul-words-v1";
+let learned={};try{learned=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(learned))}catch(e){}};
+let cur=0;
+const m=location.hash.match(/^#l(\d+)$/);if(m){const n=+m[1]-1;if(n>=0&&n<L.length)cur=n}
+else{try{const s=+localStorage.getItem(KEY+"-cur");if(s>=0&&s<L.length)cur=s}catch(e){}}
+
+const $=id=>document.getElementById(id);
+const tick='<svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7.5l3 3 6-7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const spk='<svg viewBox="0 0 20 20" fill="none"><path d="M3 8v4h3l4 3.5v-11L6 8H3z" fill="currentColor"/><path d="M13 7a4 4 0 010 6M15.5 4.5a7.5 7.5 0 010 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const id=(li,i)=>li+"-"+i;
+const doneIn=li=>L[li].items.filter((_,i)=>learned[id(li,i)]).length;
+
+const tts="speechSynthesis" in window&&typeof SpeechSynthesisUtterance!=="undefined";
+if(!tts)document.body.classList.add("no-tts");
+
+function chips(){
+  $("pick").innerHTML=L.map((l,i)=>`<option value="${i}"${i===cur?" selected":""}>${doneIn(i)===l.items.length?"✓ ":""}Урок ${i+1} · ${l.t}</option>`).join("");
+}
+function totals(){
+  const t=Object.values(learned).filter(Boolean).length;
+  $("total").textContent="Выучено "+t+" из 810";
+}
+function render(){
+  const l=L[cur],d=doneIn(cur),first=cur*30+1;
+  let rows="";
+  l.items.forEach((w,i)=>{
+    if(l.split&&i===l.split)rows+=`<li class="sep">${l.splitLabel}</li>`;
+    rows+=`<li class="word${learned[id(cur,i)]?" learned":""}" data-i="${i}">
+      <button class="check" aria-label="Выучено: ${esc(w.en)}" aria-pressed="${!!learned[id(cur,i)]}">${tick}</button>
+      <div class="text"><span class="en" lang="en">${esc(w.en)}</span>${w.tr?` <span class="tr">${esc(w.tr)}</span>`:""}<span class="dash"> — </span><span class="ru">${esc(w.ru)}</span></div>
+      <button class="say" aria-label="Произнести ${esc(w.en)}">${spk}</button></li>`;
+  });
+  $("lesson").className="lesson"+(d===l.items.length?" complete":"");
+  $("lesson").innerHTML=`<div class="lesson-head">
+      <span class="eyebrow">제${cur+1}과 · Урок ${cur+1} · ${cur<7?"база A0–A1":"работа"}</span>
+      <span class="ko-title" aria-hidden="true">${l.ko}</span>
+      <h2>${l.t}</h2>
+      <span class="count">слова ${first}–${first+29} · выучено ${d} из 30</span>
+    </div>
+    <div class="stamp" aria-hidden="true">완료</div>
+    ${l.n?`<p class="note">${l.n}</p>`:""}
+    <ol>${rows}</ol>`;
+  $("prev").disabled=cur===0;
+  $("next").textContent=cur===L.length-1?"Готово":"Дальше →";$("next").disabled=cur===L.length-1;
+  chips();totals();
+  try{localStorage.setItem(KEY+"-cur",cur)}catch(e){}
+}
+function go(n){cur=Math.max(0,Math.min(L.length-1,n));render();try{history.replaceState(null,"","#l"+(cur+1))}catch(e){}
+  $("lesson").scrollIntoView({block:"start",behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth"})}
+
+$("pick").addEventListener("change",e=>go(+e.target.value));
+$("prev").onclick=()=>go(cur-1);$("next").onclick=()=>go(cur+1);
+$("lesson").addEventListener("click",e=>{
+  const li=e.target.closest(".word");if(!li)return;const i=+li.dataset.i,k=id(cur,i);
+  if(e.target.closest(".check")){
+    if(learned[k])delete learned[k];else learned[k]=1;save();
+    li.classList.toggle("learned",!!learned[k]);li.querySelector(".check").setAttribute("aria-pressed",!!learned[k]);
+    const d=doneIn(cur);$("lesson").classList.toggle("complete",d===30);
+    $("lesson").querySelector(".count").textContent=`слова ${cur*30+1}–${cur*30+30} · выучено ${d} из 30`;
+    chips();totals();
+  }else if(e.target.closest(".say")){
+    try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(L[cur].items[i].en.replace(/\s*\(.*?\)/g,"").replace(/ \/ /g,", "));u.lang="en-US";u.rate=.85;speechSynthesis.speak(u)}catch(err){}
+  }else if(e.target.closest(".text")){li.classList.toggle("shown")}
+});
+$("quiz").onclick=function(){const on=document.body.classList.toggle("quiz");this.setAttribute("aria-pressed",on);
+  this.textContent=on?"Показать перевод":"Скрыть перевод";document.querySelectorAll(".word.shown").forEach(w=>w.classList.remove("shown"))};
+$("reset").onclick=function(){
+  if(this.dataset.confirm){L[cur].items.forEach((_,i)=>delete learned[id(cur,i)]);save();render();this.textContent="Сбросить урок";delete this.dataset.confirm}
+  else{this.dataset.confirm=1;this.textContent="Точно сбросить?";setTimeout(()=>{if(this.dataset.confirm){delete this.dataset.confirm;this.textContent="Сбросить урок"}},3000)}
+};
+render();
+</script>
+
+</body></html>
