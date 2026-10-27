@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Become a model and actor in South Korea">
+<meta property="og:description" content="Act for Netflix, Disney+, Samsung, Pepsi, BTS. A program by Konstantin Romanenko.">
+<meta property="og:image" content="img/kostya-portrait.webp">
+<meta charset="utf-8">
+<title>ASIA4EVER · Act in Korea</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+/* Layout (following the TalkCut reference the client chose): clean white page, tight Inter headlines with an
+   orange-gradient accent phrase, monospace uppercase labels with an orange dot, faint dot-grid patches under a warm
+   haze, glossy orange 3D-style shapes floating at the edges, pill nav, orange pill CTAs, soft grey cards. */
+:root{
+  --bg:#FFFFFF;
+  --ink:#262626;
+  --ink-2:#55554F;
+  --muted:#8A8A84;
+  --soft:#F5F5F4;
+  --line:rgba(20,20,20,.08);
+  --o1:#FF9A4D;
+  --o2:#F2521B;
+  --o3:#D9400F;
+  --dark:#161616;
+  --sans:"Inter",-apple-system,"Segoe UI",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--o2);outline-offset:3px;border-radius:10px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));position:relative}
+section{position:relative;overflow-x:clip}
+.sec{padding-block:clamp(72px,9vw,128px)}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:500;text-wrap:balance}
+h2{font-size:clamp(32px,4.6vw,56px);line-height:1.04;letter-spacing:-.045em}
+h3{font-size:20px;letter-spacing:-.02em;line-height:1.25}
+.acc{background:linear-gradient(180deg,var(--o1),var(--o2) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.label{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-2)}
+.label::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--o2);box-shadow:0 0 0 3px rgba(242,82,27,.15)}
+.lead{font-size:clamp(17px,1.5vw,19px);color:var(--ink-2);max-width:38em}
+.center{text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px;margin:0 auto clamp(36px,5vw,60px)}
+.center .lead{text-align:center}
+
+/* atmosphere */
+.haze{position:absolute;pointer-events:none;border-radius:50%;background:radial-gradient(closest-side,rgba(255,154,77,.22),rgba(255,154,77,.08) 55%,rgba(255,154,77,0));z-index:0}
+.dots{position:absolute;pointer-events:none;z-index:0;background-image:radial-gradient(rgba(40,30,20,.16) 1px,transparent 1.2px);background-size:14px 14px;-webkit-mask-image:radial-gradient(closest-side,#000,transparent);mask-image:radial-gradient(closest-side,#000,transparent)}
+.rings{position:absolute;pointer-events:none;border-radius:50%;border:1px solid rgba(242,82,27,.16);z-index:0}
+.rings::before,.rings::after{content:"";position:absolute;border-radius:50%;border:1px solid rgba(242,82,27,.1)}
+.rings::before{inset:-14%}
+.rings::after{inset:16%}
+.obj{position:absolute;pointer-events:none;z-index:4;filter:drop-shadow(0 18px 22px rgba(217,64,15,.28));animation:bob 6s ease-in-out infinite}
+.obj.b{animation-delay:-2s;animation-duration:7s}
+.obj.c{animation-delay:-4s;animation-duration:8s}
+@keyframes bob{50%{transform:translateY(-12px) rotate(4deg)}}
+@media (prefers-reduced-motion:reduce){.obj,.ticker-track{animation:none!important}}
+.spark{position:absolute;pointer-events:none;z-index:1;color:var(--o2)}
+
+/* nav */
+.nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 10px);z-index:20;margin:10px auto 0;max-width:1180px;padding-inline:max(10px,env(safe-area-inset-left,0px)) max(10px,env(safe-area-inset-right,0px))}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:999px;padding:8px 8px 8px 18px;box-shadow:0 6px 24px rgba(20,20,20,.08),0 0 0 1px var(--line)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:18px;letter-spacing:-.03em}
+.logo i{width:30px;height:30px;border-radius:9px;background:linear-gradient(160deg,#2a2a2a,#111);display:grid;place-items:center}
+.links{display:flex;gap:22px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+.links a{text-decoration:none;color:var(--ink-2)}
+.links a:hover{color:var(--o2)}
+.up{width:40px;height:40px;border-radius:50%;background:var(--dark);color:#fff;display:grid;place-items:center;text-decoration:none;flex:none}
+
+/* buttons & chips */
+.cta{display:inline-flex;align-items:center;gap:14px;padding:8px 8px 8px 24px;min-height:54px;border-radius:999px;text-decoration:none;color:#fff;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;background:linear-gradient(180deg,var(--o1),var(--o2));box-shadow:0 12px 26px rgba(242,82,27,.32),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .2s ease,box-shadow .2s ease}
+.cta:hover{transform:translateY(-2px);box-shadow:0 16px 32px rgba(242,82,27,.38),inset 0 1px 0 rgba(255,255,255,.35)}
+.cta .ci{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center}
+.cta.ghost{background:#fff;color:var(--ink);box-shadow:0 6px 18px rgba(20,20,20,.08),0 0 0 1px var(--line)}
+.cta.ghost .ci{background:var(--soft)}
+.chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:8px 14px;font-size:14px;font-weight:500;box-shadow:0 4px 14px rgba(20,20,20,.07),0 0 0 1px var(--line)}
+.chips{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.chips .sep{font-family:var(--mono);color:var(--muted);font-size:12px}
+.chips .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+
+/* hero */
+.hero{padding-block:clamp(40px,6vw,80px) clamp(40px,6vw,72px)}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(28px,4vw,56px);align-items:center}
+.hero-text{display:flex;flex-direction:column;gap:24px;align-items:flex-start}
+.hero h1{font-size:clamp(40px,5.6vw,68px);line-height:1.02;letter-spacing:-.05em}
+.hero-media{position:relative;min-height:clamp(380px,46vw,560px);display:grid;place-items:center}
+.photo-card{position:relative;z-index:2;width:min(88%,470px);aspect-ratio:926/834;border-radius:26px;overflow:hidden;box-shadow:0 40px 70px rgba(30,20,10,.25),0 0 0 8px #fff,0 0 0 9px var(--line);transform:rotate(-3deg)}
+.photo-card img{width:100%;height:100%;object-fit:cover}
+.bubble{position:absolute;z-index:3;border-radius:18px;padding:12px 16px;font-size:14px;line-height:1.35;box-shadow:0 14px 30px rgba(20,20,20,.14);max-width:240px}
+.bubble.o{background:linear-gradient(180deg,var(--o1),var(--o2));color:#fff;border-bottom-right-radius:6px}
+.bubble.w{background:#fff;color:var(--ink);border-bottom-left-radius:6px;box-shadow:0 14px 30px rgba(20,20,20,.12),0 0 0 1px var(--line)}
+.bubble small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.8;margin-bottom:4px}
+.ticker{margin-top:clamp(40px,5vw,64px);background:linear-gradient(90deg,var(--o2),var(--o1),var(--o2));color:#fff;transform:rotate(-1.2deg);overflow:hidden;position:relative;z-index:2;box-shadow:0 12px 30px rgba(242,82,27,.25)}
+.ticker-track{display:flex;gap:28px;width:max-content;padding:14px 0;font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;animation:marquee 38s linear infinite}
+.ticker-track span{display:inline-flex;align-items:center;gap:28px}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* lesson */
+.video{position:relative;z-index:2;display:block;max-width:960px;margin:0 auto;aspect-ratio:16/9;border-radius:28px;overflow:hidden;text-decoration:none;color:#fff;background:#111;box-shadow:0 40px 80px rgba(30,20,10,.22),0 0 0 8px #fff,0 0 0 9px var(--line)}
+.video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;opacity:.55}
+.video::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.7))}
+.video .play{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(76px,9vw,104px);height:clamp(76px,9vw,104px);border-radius:50%;background:linear-gradient(180deg,var(--o1),var(--o2));display:grid;place-items:center;box-shadow:0 16px 36px rgba(242,82,27,.45);transition:transform .25s ease}
+.video:hover .play{transform:translate(-50%,-50%) scale(1.06)}
+.video .badge{position:absolute;z-index:2;top:18px;left:18px;background:rgba(255,255,255,.92);color:var(--ink);border-radius:999px;padding:6px 12px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.video .vt{position:absolute;z-index:2;left:24px;right:24px;bottom:20px;font-size:clamp(17px,2vw,22px);font-weight:500;letter-spacing:-.02em}
+
+/* cards */
+.card{background:var(--soft);border-radius:24px;padding:clamp(22px,2.6vw,30px);position:relative}
+.card.w{background:#fff;box-shadow:0 10px 30px rgba(20,20,20,.06),0 0 0 1px var(--line)}
+.num{width:42px;height:42px;border-radius:50%;background:linear-gradient(180deg,var(--o1),var(--o2));color:#fff;display:grid;place-items:center;font-weight:600;font-size:16px;box-shadow:0 0 0 5px #fff,0 8px 18px rgba(242,82,27,.3)}
+.ic{width:44px;height:44px;border-radius:12px;background:#fff;display:grid;place-items:center;box-shadow:0 4px 12px rgba(20,20,20,.06),0 0 0 1px var(--line);flex:none;color:var(--o2)}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;position:relative;z-index:2}
+.grid3 .card{display:flex;flex-direction:column;gap:12px}
+.grid3 .card p{color:var(--ink-2);font-size:16px}
+.fees{margin-top:16px;padding:0;overflow:hidden;position:relative;z-index:2}
+.fees-scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:0;font-size:16px}
+th{text-align:left;font-family:var(--mono);font-weight:500;color:var(--muted);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:22px 26px 12px}
+td{padding:16px 26px;border-top:1px solid var(--line);color:var(--ink)}
+td.pay{font-weight:600;color:var(--o3);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* kostya */
+.k-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:center;position:relative;z-index:2}
+.k-media{position:relative;display:grid;place-items:center;min-height:clamp(380px,42vw,520px)}
+.k-media .photo-card{transform:rotate(3deg);aspect-ratio:4/5;width:min(82%,400px)}
+.k-media .photo-card img{object-position:center top}
+.k-text{display:flex;flex-direction:column;gap:20px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.stat{background:var(--soft);border-radius:20px;padding:18px}
+.stat b{display:block;font-size:clamp(26px,2.6vw,34px);font-weight:500;letter-spacing:-.04em;line-height:1;margin-bottom:8px;font-variant-numeric:tabular-nums}
+.stat span{font-size:14px;color:var(--ink-2);line-height:1.35;display:block}
+.rail-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin:clamp(56px,7vw,88px) 0 20px;position:relative;z-index:2}
+.rail-head h3{font-size:clamp(26px,3vw,38px);font-weight:500;letter-spacing:-.04em;line-height:1.05}
+.rail-btns{display:flex;gap:8px}
+.rail-btns button{width:46px;height:46px;border-radius:50%;border:0;background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 14px rgba(20,20,20,.08),0 0 0 1px var(--line)}
+.rail-btns button:hover{color:var(--o2)}
+.rail{display:grid;grid-auto-flow:column;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 4px 26px;position:relative;z-index:2;scrollbar-width:thin;scrollbar-color:var(--o1) transparent}
+.rail.posters{grid-auto-columns:clamp(160px,16vw,200px)}
+.rail.wide{grid-auto-columns:clamp(270px,28vw,360px)}
+.tile{scroll-snap-align:start;margin:0;display:flex;flex-direction:column;gap:10px;min-width:0;text-align:center;align-items:center}
+.tile .pic{width:100%;border-radius:20px;overflow:hidden;background:var(--soft);box-shadow:0 18px 34px rgba(30,20,10,.16);transition:transform .25s ease}
+.tile:hover .pic{transform:translateY(-4px)}
+.posters .pic{aspect-ratio:3/4}
+.wide .pic{aspect-ratio:16/9}
+.tile img{width:100%;height:100%;object-fit:cover}
+.tile .ph{width:100%;height:100%;display:grid;place-items:center;padding:14px;text-align:center;font-weight:500;letter-spacing:-.02em;background:linear-gradient(160deg,#2a2a2a,#111);color:#fff}
+.tile b{font-weight:500;font-size:15px;line-height:1.3}
+.tile .plat{color:var(--o2);font-weight:500}
+.tile .role{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);line-height:1.45}
+
+/* checks */
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.checks li{display:flex;gap:14px;align-items:flex-start;font-size:17px;line-height:1.45}
+.cb{width:22px;height:22px;border-radius:6px;background:linear-gradient(180deg,var(--o1),var(--o2));display:grid;place-items:center;flex:none;margin-top:2px;box-shadow:0 4px 10px rgba(242,82,27,.3)}
+.fit-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;position:relative;z-index:2}
+.fit-grid .card{display:flex;flex-direction:column;gap:14px}
+.fit-grid p{color:var(--ink-2)}
+.tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--o3);font-weight:600}
+
+/* results */
+.cases{display:flex;flex-direction:column;gap:20px;position:relative;z-index:2}
+.case{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);background:#fff;border-radius:28px;padding:clamp(22px,3.4vw,44px);display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,3vw,44px);align-items:center;min-height:min(70vh,580px);box-shadow:0 -10px 40px rgba(20,20,20,.06),0 0 0 1px var(--line)}
+.case .photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.case .photos div{aspect-ratio:3/4;border-radius:18px;background:var(--soft);display:grid;place-items:center;color:var(--muted);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:8px}
+.case .photos div:last-child{background:#FFF1E8;color:var(--o3);transform:rotate(3deg)}
+.case .photos div:first-child{transform:rotate(-2deg)}
+.case .info{display:flex;flex-direction:column;gap:14px}
+.case h3{font-size:clamp(28px,3.4vw,44px);font-weight:500;letter-spacing:-.045em;line-height:1}
+.case .inc{font-size:clamp(40px,5.4vw,72px);font-weight:500;letter-spacing:-.05em;line-height:.95}
+.case .meta{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ba{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ba div{background:var(--soft);border-radius:16px;padding:14px 16px;font-size:15px;line-height:1.45;color:var(--ink-2)}
+.ba div b{display:block;font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.ba div.now{background:#FFF1E8}
+.ba div.now b{color:var(--o3)}
+
+/* path */
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;list-style:none;margin:0;padding:0;position:relative;z-index:2}
+.step{display:flex;flex-direction:column;gap:14px;padding-top:34px}
+.step .num{position:absolute;top:-16px;left:26px}
+.step p{color:var(--ink-2);font-size:16px}
+.step.hl{background:linear-gradient(180deg,#FFF4EC,#FFE6D6)}
+.mark{background:#FFE2D1;color:var(--o3);font-weight:600;border-radius:6px;padding:1px 6px}
+
+/* visa */
+.visas{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;position:relative;z-index:2}
+.visa{background:#fff;border-radius:20px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;box-shadow:0 6px 20px rgba(20,20,20,.06),0 0 0 1px var(--line)}
+.visa b{font-size:22px;font-weight:500;letter-spacing:-.03em;line-height:1.05}
+.visa .t{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--o3);font-weight:600}
+.visa p{font-size:14.5px;color:var(--ink-2);line-height:1.45}
+.e6{margin-top:18px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(20px,3vw,48px);position:relative;z-index:2;align-items:start}
+.e6 .big{font-size:clamp(96px,13vw,180px);font-weight:500;letter-spacing:-.07em;line-height:.85}
+.e6 .intro{display:flex;flex-direction:column;gap:16px}
+.e6 .intro p{color:var(--ink-2)}
+.e6 .intro p b{color:var(--ink)}
+.e6 .cols{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.stages{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;counter-reset:s}
+.stages li{display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.45}
+.stages li::before{counter-increment:s;content:counter(s);width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px var(--line);display:grid;place-items:center;font-size:13px;font-weight:600;color:var(--o3);flex:none}
+
+/* training/modules */
+.months{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;margin:0;padding:0;position:relative;z-index:2}
+.month{display:flex;flex-direction:column;gap:10px}
+.month .m{font-size:clamp(52px,6vw,80px);font-weight:500;letter-spacing:-.06em;line-height:.9}
+.month .m small{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-left:8px;font-weight:500;vertical-align:middle}
+.month p{color:var(--ink-2);font-size:16px}
+.perks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:16px;position:relative;z-index:2}
+.perk{display:flex;flex-direction:column;gap:10px}
+.perk p{font-size:15px;color:var(--ink-2)}
+.mods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;list-style:none;margin:0;padding:0;position:relative;z-index:2}
+.mod{display:flex;flex-direction:column;gap:10px}
+.mod p{color:var(--ink-2);font-size:15.5px}
+.mod .res{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.mod .res b{color:var(--ink)}
+
+/* prices */
+.tariffs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch;position:relative;z-index:2}
+.tariff{display:flex;flex-direction:column;gap:12px}
+.tariff h3{font-size:clamp(22px,2.2vw,28px);font-weight:500;letter-spacing:-.035em}
+.tariff .for{color:var(--muted);font-size:15px}
+.tariff ul{list-style:none;margin:6px 0 0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.tariff li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:1.45}
+.tariff li::before{content:"";width:16px;height:16px;border-radius:5px;background:linear-gradient(180deg,var(--o1),var(--o2));flex:none;margin-top:3px}
+.tariff.best{background:var(--dark);color:#fff;box-shadow:0 30px 60px rgba(20,20,20,.25)}
+.tariff.best .for{color:#B9B9B2}
+.tariff.best ul{border-color:rgba(255,255,255,.12)}
+.seats{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,var(--o1),var(--o2));border-radius:999px;padding:6px 12px}
+.notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px;position:relative;z-index:2}
+.notes p{color:var(--ink-2);font-size:15.5px}
+.notes b{color:var(--ink)}
+
+/* faq */
+.faq{max-width:840px;margin:0 auto;position:relative;z-index:2;display:flex;flex-direction:column;gap:10px}
+.faq details{background:var(--soft);border-radius:20px;padding:0 22px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font-size:18px;font-weight:500;letter-spacing:-.02em}
+.faq summary::-webkit-details-marker{display:none}
+.faq .pm{width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;flex:none;transition:transform .25s ease,background-color .25s ease,color .25s ease;box-shadow:0 0 0 1px var(--line)}
+.faq details[open] .pm{transform:rotate(45deg);background:var(--o2);color:#fff}
+.faq details p{padding:0 0 20px;color:var(--ink-2);max-width:46em}
+
+/* apply */
+.apply-box{position:relative;z-index:2;max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:22px;align-items:center;text-align:center}
+.apply-steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;text-align:left;width:100%}
+.apply-steps .card{display:flex;flex-direction:column;gap:12px;padding-top:34px}
+.apply-steps .num{position:absolute;top:-16px;left:22px}
+.apply-steps p{color:var(--ink-2);font-size:15.5px}
+footer{padding-block:28px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* responsive */
+@media (max-width:1060px){
+  .links{display:none}
+  .visas{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .perks{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .mods{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  section > .obj{opacity:.9;width:48px!important}
+  .hero-grid,.k-grid,.case,.e6,.fit-grid{grid-template-columns:minmax(0,1fr)}
+  .grid3,.steps,.months,.tariffs,.notes,.apply-steps{grid-template-columns:minmax(0,1fr)}
+  .steps,.apply-steps{row-gap:30px}
+  .visas{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .case{position:relative;top:auto;min-height:0}
+  .case .photos{order:2}
+  .hero-media{min-height:clamp(340px,96vw,460px)}
+}
+@media (max-width:520px){
+  section > .obj, section > .spark{display:none}
+  .hero-media .obj{transform:scale(.8)}
+  body{font-size:16px}
+  .visas,.perks,.mods,.ba,.stats{grid-template-columns:minmax(0,1fr)}
+  table{min-width:0;font-size:14.5px}
+  th,td{padding-left:16px;padding-right:16px}
+  td.pay{white-space:normal}
+  .rail-btns{display:none}
+  .bubble{max-width:190px;font-size:13px}
+}
+/* size & alignment update: headings +4px, body +2px, everything left-aligned */
+body{font-size:19px}
+.hero h1{font-size:clamp(44px,6vw,72px)}
+h2{font-size:clamp(44px,6vw,72px);line-height:1.02;letter-spacing:-.05em}
+h3{font-size:24px}
+.rail-head h3{font-size:clamp(30px,3.3vw,42px)}
+.case h3{font-size:clamp(32px,3.7vw,48px)}
+.tariff h3{font-size:clamp(26px,2.5vw,32px)}
+.lead{font-size:clamp(19px,1.7vw,21px)}
+.grid3 .card p,.step p,.month p,.mod p,.notes p,.apply-steps p,.fit-grid p,.e6 .intro p{font-size:18px}
+.perk p,.visa p{font-size:17px}
+.checks li,.stages li{font-size:19px}
+.stages li{font-size:18px}
+.tariff li{font-size:17.5px}
+.tariff .for{font-size:17px}
+.stat span{font-size:16px}
+.ba div{font-size:17px}
+.faq summary{font-size:20px}
+.faq details p{font-size:18px}
+td{font-size:18px}
+.tile b{font-size:17px}
+.chip{font-size:16px}
+.bubble{font-size:16px}
+.video .vt{font-size:clamp(19px,2.2vw,24px)}
+.center{text-align:left;align-items:flex-start;margin-left:0;margin-right:0}
+.center .lead{text-align:left}
+.apply-box{text-align:left;align-items:flex-start;margin-left:0}
+.tile{text-align:left;align-items:flex-start}
+.faq{margin-left:0}
+.video{margin-left:0;max-width:none}
+/* projects as a full grid instead of carousels */
+.rail-btns{display:none!important}
+.rail{grid-auto-flow:row;overflow:visible;scroll-snap-type:none;gap:28px 18px;padding:6px 0 0}
+.rail.posters{grid-auto-columns:auto;grid-template-columns:repeat(auto-fill,minmax(min(150px,42%),1fr))}
+.rail.wide{grid-auto-columns:auto;grid-template-columns:repeat(auto-fill,minmax(min(250px,42%),1fr))}
+@media (max-width:620px){
+  .rail{gap:24px 12px}
+  .rail.posters{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .rail.wide{grid-template-columns:minmax(0,1fr)}
+  .tile .pic{border-radius:16px}
+  .tile b{font-size:16px}
+}
+@media (max-width:520px){
+  body{font-size:18px}
+  table{font-size:16.5px}
+  .bubble{font-size:14.5px}
+}
+/* step illustrations */
+.step{padding-top:clamp(22px,2.6vw,30px)}
+.step-art{position:relative;min-height:clamp(210px,19vw,240px);border-radius:18px;margin-bottom:14px;padding:18px;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;
+  background:radial-gradient(80% 90% at 85% 115%,rgba(242,82,27,.6),rgba(242,82,27,0) 60%),linear-gradient(160deg,#262626,#111);box-shadow:0 18px 34px rgba(20,20,20,.18)}
+.step .step-art .num{position:absolute;left:20px;top:auto;bottom:-21px}
+.ui{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:9px 12px;font-size:13.5px;line-height:1.3;display:flex;align-items:center;gap:10px}
+.ui .ok{margin-left:auto;color:var(--o1);font-weight:600;white-space:nowrap}
+.mlab{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.thumbs{display:flex;gap:10px;justify-content:center;align-items:flex-end}
+.thumbs img{width:27%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;border:3px solid #fff;box-shadow:0 10px 20px rgba(0,0,0,.4)}
+.thumbs img:nth-child(1){transform:rotate(-6deg)}
+.thumbs img:nth-child(2){transform:translateY(-8px);width:31%}
+.thumbs img:nth-child(3){transform:rotate(6deg);object-position:left top}
+.tchips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.tchips span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:4px 9px}
+.tchips span b{color:var(--o1)}
+.pbar{height:6px;border-radius:3px;background:rgba(255,255,255,.12);overflow:hidden}
+.pbar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--o2),var(--o1))}
+.split{display:flex;height:34px;border-radius:10px;overflow:hidden;font-family:var(--mono);font-size:11px;letter-spacing:.12em;font-weight:600}
+.split span{display:grid;place-items:center}
+.split span:first-child{width:80%;background:linear-gradient(90deg,var(--o2),var(--o1))}
+.split span:last-child{width:20%;background:rgba(255,255,255,.14)}
+.sig{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.okpill{background:#fff;color:var(--ink);border-radius:999px;padding:5px 11px;font-size:12.5px;font-weight:600}
+.visa-card{display:flex;gap:12px;align-items:center;background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:10px;width:min(100%,300px)}
+.visa-card img{width:54px;height:66px;object-fit:cover;border-radius:8px}
+.visa-card b{display:block;font-size:22px;font-weight:600;letter-spacing:-.03em}
+@media (max-width:520px){.step-art .ui:nth-of-type(3){display:none}.ui{font-size:13px}}
+.sbub{align-self:flex-end;background:linear-gradient(180deg,var(--o1),var(--o2));border-radius:14px;border-bottom-right-radius:4px;padding:9px 12px;font-size:13.5px;box-shadow:0 10px 20px rgba(242,82,27,.35);max-width:78%}
+/* shared card illustrations */
+.step-art.sm{min-height:clamp(150px,13vw,170px);padding:14px}
+.step-art.xs{min-height:120px;padding:12px;margin-bottom:6px}
+.apply-steps .card{padding-top:clamp(22px,2.6vw,30px)}
+.apply-steps .step-art .num{position:absolute;left:20px;top:auto;bottom:-21px}
+.big-n{font-size:clamp(40px,4.4vw,56px);font-weight:500;letter-spacing:-.05em;line-height:.9}
+.rowbar{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;font-size:12.5px}
+.rowbar .bar{height:8px;border-radius:4px;background:rgba(255,255,255,.12);overflow:hidden}
+.rowbar .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--o2),var(--o1))}
+.wbub{align-self:flex-start;background:#fff;color:var(--ink);border-radius:14px;border-bottom-left-radius:4px;padding:8px 12px;font-size:13.5px;max-width:80%}
+.wbub small,.sbub small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-bottom:2px}
+.posters3{display:flex;gap:8px;justify-content:center}
+.posters3 img{width:30%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;border:3px solid #fff;box-shadow:0 10px 20px rgba(0,0,0,.4)}
+.posters3 img:nth-child(1){transform:rotate(-5deg)}.posters3 img:nth-child(3){transform:rotate(5deg)}
+.route{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px}
+.route .dash{flex:1;border-top:2px dashed rgba(255,255,255,.35);position:relative;height:0}
+.route .dash svg{position:absolute;left:50%;top:-11px;transform:translateX(-50%)}
+.week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.08em}
+.week span{border-radius:8px;padding:8px 0;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1)}
+.week span.on{background:linear-gradient(180deg,var(--o1),var(--o2));border-color:transparent;font-weight:600}
+.ladder{display:flex;align-items:flex-end;gap:8px;height:80px}
+.ladder div{flex:1;border-radius:8px 8px 4px 4px;background:rgba(255,255,255,.12);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;text-transform:uppercase}
+.ladder div:last-child{background:linear-gradient(180deg,var(--o1),var(--o2))}
+.center-art{align-items:center;text-align:center}
+.clap{width:46px;height:40px}
+/* hero: full-width photo on top */
+.hero{padding-top:clamp(16px,2.4vw,28px)}
+.hero-photo-wide{position:relative;z-index:2;margin-bottom:clamp(28px,4vw,48px)}
+.hero-photo-wide img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:center 22%;border-radius:clamp(20px,2.4vw,32px);box-shadow:0 40px 80px rgba(30,20,10,.22)}
+.hero .hero-text{position:relative;z-index:2;max-width:900px}
+.hero-checks{gap:10px}
+.hero-checks li{font-size:clamp(19px,1.8vw,22px);font-weight:500;align-items:center}
+.hero-checks .cb{margin-top:0}
+@media (max-width:860px){.hero-photo-wide img{aspect-ratio:1/1;object-position:center 20%}}
+.k-photo-wide img{object-position:center 30%}
+@media (max-width:860px){.k-photo-wide img{object-position:center 18%}}
+#kostya .k-text{position:relative;z-index:2;max-width:900px}
+.k-story{display:flex;flex-direction:column;gap:14px}
+.zoom-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.store{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 18px 0 14px;border-radius:12px;background:#000;color:#fff;text-decoration:none;border:1px solid #A6A6A6;transition:transform .2s ease}
+.store:hover{transform:translateY(-2px)}
+.store span{display:flex;flex-direction:column;line-height:1}
+.store small{font-size:11px;letter-spacing:.01em;font-weight:500}
+.store b{font-size:22px;font-weight:600;letter-spacing:-.02em;margin-top:2px}
+.zbtn{display:flex;align-items:center;gap:10px;min-height:48px;padding:10px 16px;border-radius:14px;background:var(--dark);color:#fff;text-decoration:none;font-weight:500;font-size:16px;transition:transform .2s ease}
+.zbtn:hover{transform:translateY(-2px)}
+.zbtn+.zbtn{background:linear-gradient(180deg,var(--o1),var(--o2))}
+.promo{position:relative;overflow:hidden;border-radius:28px;padding:clamp(26px,4vw,48px);color:#fff;background:linear-gradient(135deg,var(--o1),var(--o2) 55%,var(--o3));box-shadow:0 30px 60px rgba(242,82,27,.3),inset 0 1px 0 rgba(255,255,255,.3);display:flex;flex-direction:column;gap:14px}
+.promo::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.35),rgba(255,255,255,0))}
+.promo p{position:relative;font-size:clamp(26px,3.4vw,42px);line-height:1.12;letter-spacing:-.04em;font-weight:500;max-width:20em}
+.promo b{font-weight:600;color:#fff;background:rgba(255,255,255,.18);border-radius:12px;padding:0 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.promo-lab{position:relative;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.85}
+#kostya .k-text{max-width:none}
+#kostya .k-story,#kostya .stats{max-width:900px}
+.fees-head{position:relative;z-index:2;display:flex;flex-direction:column;gap:18px;margin:clamp(56px,7vw,96px) 0 clamp(24px,3vw,36px)}
+td .sub{display:block;font-size:14px;color:var(--muted);margin-top:2px}
+td.pay{white-space:normal}
+.fees-sum{position:relative;z-index:2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px}
+.fees-sum .card{display:flex;flex-direction:column;gap:6px}
+.fees-sum b{font-size:clamp(40px,5vw,64px);font-weight:500;letter-spacing:-.05em;line-height:1;font-variant-numeric:tabular-nums}
+.fees-sum p{color:var(--ink-2);font-size:18px}
+.mlab2{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-2)}
+@media (max-width:620px){.fees-sum{grid-template-columns:minmax(0,1fr)}}
+/* case photos */
+.case .cphotos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-self:center}
+.case .cphotos figure{margin:0;position:relative;border-radius:18px;overflow:hidden;background:var(--soft);aspect-ratio:3/4;box-shadow:0 14px 30px rgba(20,20,20,.14)}
+.case .cphotos figure:first-child{transform:rotate(-2deg)}
+.case .cphotos figure.aft{transform:rotate(2deg)}
+.case .cphotos figure.with{grid-column:1/-1;aspect-ratio:16/7;transform:none}
+.case .cphotos img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.case .cphotos figcaption{position:absolute;left:10px;top:10px;background:#fff;color:var(--ink);border-radius:999px;padding:4px 10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 4px 10px rgba(0,0,0,.15)}
+.case .cphotos figure.aft figcaption{background:linear-gradient(180deg,var(--o1),var(--o2));color:#fff}
+.case.no-photo{grid-template-columns:minmax(0,1fr);min-height:0}
+@media (max-width:860px){.case .cphotos{order:0}}
+</style>
+
+<!-- shared gradients for the glossy shapes -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <radialGradient id="gS" cx="35%" cy="30%" r="75%"><stop offset="0" stop-color="#FFD3A8"/><stop offset=".35" stop-color="#FF8A3D"/><stop offset=".8" stop-color="#E8481A"/><stop offset="1" stop-color="#B8330B"/></radialGradient>
+    <linearGradient id="gL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFB27A"/><stop offset=".5" stop-color="#F75E22"/><stop offset="1" stop-color="#C2380D"/></linearGradient>
+    <symbol id="star" viewBox="0 0 100 100"><path d="M50 4C54 34 66 46 96 50 66 54 54 66 50 96 46 66 34 54 4 50 34 46 46 34 50 4Z" fill="url(#gS)"/><ellipse cx="40" cy="36" rx="7" ry="4" fill="#fff" opacity=".55" transform="rotate(-35 40 36)"/></symbol>
+    <symbol id="play" viewBox="0 0 100 100"><path d="M26 14c0-8 8-12 15-8l48 34c6 4 6 13 0 17L41 92c-7 5-15 0-15-8Z" fill="url(#gL)"/><path d="M34 22c0-4 4-6 7-4l18 12" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none" opacity=".45"/></symbol>
+    <symbol id="arc" viewBox="0 0 100 70"><path d="M14 60a36 36 0 0 1 72 0" stroke="url(#gL)" stroke-width="20" stroke-linecap="round" fill="none"/><path d="M22 44a30 30 0 0 1 22-20" stroke="#fff" stroke-width="4" stroke-linecap="round" fill="none" opacity=".45"/></symbol>
+    <symbol id="ball" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="url(#gS)"/><ellipse cx="36" cy="32" rx="12" ry="7" fill="#fff" opacity=".5" transform="rotate(-30 36 32)"/></symbol>
+    <symbol id="sp" viewBox="0 0 24 24"><path d="M12 1C13 9 15 11 23 12 15 13 13 15 12 23 11 15 9 13 1 12 9 11 11 9 12 1Z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" aria-labelledby="h1">
+  <div class="dots" style="width:520px;height:420px;left:-60px;top:40px" aria-hidden="true"></div>
+  <div class="haze" style="width:900px;height:900px;right:-260px;top:-200px" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-photo-wide">
+      <svg class="obj" style="width:clamp(56px,7vw,96px);left:-1%;bottom:-6%" aria-hidden="true"><use href="#star"/></svg>
+      <svg class="obj c" style="width:clamp(50px,6vw,84px);right:-1%;top:-5%" aria-hidden="true"><use href="#play"/></svg>
+      <img src="img/kostya-portrait.webp" alt="Konstantin Romanenko, Netflix and Disney+ actor" width="926" height="834">
+    </div>
+    <div class="hero-text">
+      <h1 id="h1">Become a model and actor <span class="acc">in South Korea</span> with Konstantin Romanenko</h1>
+      <p class="lead">Act for Netflix, Disney+, Samsung, Pepsi, BTS and other brands.</p>
+      <ul class="checks hero-checks">
+        <li><span class="cb" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>No experience needed</li>
+        <li><span class="cb" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Any look works</li>
+        <li><span class="cb" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>No Korean needed</li>
+      </ul>
+      <p class="lead">I take you all the way to your first paid shoot, guaranteed in the contract.</p>
+    </div>
+  </div>
+  <div class="ticker" aria-hidden="true"><div class="ticker-track">
+    <span>No experience ✦ Any look ✦ No Korean ✦ Contract guarantee ✦ 250+ agencies ✦ E-6 visa ✦ Up to $1,000 a day ✦</span>
+    <span>No experience ✦ Any look ✦ No Korean ✦ Contract guarantee ✦ 250+ agencies ✦ E-6 visa ✦ Up to $1,000 a day ✦</span>
+  </div></div>
+</section>
+
+<!-- LESSON -->
+<section class="sec" id="lesson" aria-labelledby="h-lesson">
+  <div class="haze" style="width:1000px;height:800px;left:50%;top:10%;transform:translateX(-50%)" aria-hidden="true"></div>
+  <div class="dots" style="width:700px;height:500px;left:50%;top:30%;transform:translateX(-50%)" aria-hidden="true"></div>
+  <svg class="obj b" style="width:70px;left:4%;top:20%" aria-hidden="true"><use href="#arc"/></svg>
+  <svg class="obj" style="width:76px;right:5%;top:12%" aria-hidden="true"><use href="#play"/></svg>
+  <div class="wrap">
+    <div class="center" style="position:relative;z-index:2">
+      <span class="label">Free lesson</span>
+      <h2 id="h-lesson">How a beginner gets on set <span class="acc">and earns up to $1,000 a day</span></h2>
+      <p class="lead">In brand commercials, music videos and Netflix films. Watch it before our call. The lesson is in Russian.</p>
+    </div>
+    <a class="video" href="https://youtu.be/ccCEPRRRSDI" target="_blank" rel="noopener">
+      <img src="img/kostya-portrait.webp" alt="" loading="lazy">
+      <span class="badge">YouTube · free</span>
+      <span class="play" aria-hidden="true"><svg width="34" height="34" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#fff"/></svg></span>
+      <span class="vt">Watch the lesson</span>
+    </a>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec" id="why" aria-labelledby="h-why" style="padding-top:0">
+  <svg class="spark" style="width:16px;left:8%;top:6%" aria-hidden="true"><use href="#sp"/></svg>
+  <div class="wrap">
+    <div class="center">
+      <span class="label">Why Korea</span>
+      <h2 id="h-why">The shortest way <span class="acc">into film for a foreigner</span></h2>
+      <p class="lead">If you want to start a career as an actor or model, South Korea is the shortest way into film and advertising. Here is why:</p>
+    </div>
+    <div class="grid3">
+      <article class="card"><div class="step-art sm" aria-hidden="true"><div class="posters3"><img src="img/p-tyrant.webp" alt=""><img src="img/p-stronggirl.webp" alt=""><img src="img/p-redswan.webp" alt=""></div><div class="tchips"><span>Europeans</span><span>Arabs</span><span>Asians</span></div></div><h3>Any look works</h3><p>Korea films for the whole world: K-dramas, films, music videos and ads go out on Netflix and Disney+. Productions need all kinds of faces: Europeans, Arabs, Asians.</p></article>
+      <article class="card"><div class="step-art sm" aria-hidden="true"><span class="mlab">Fee per shift</span><div class="big-n acc">up to $1,000</div><div class="rowbar"><span>Extra</span><span class="bar"><i style="width:18%"></i></span><span>₩80–120K</span></div><div class="rowbar"><span>Bit part</span><span class="bar"><i style="width:100%"></i></span><span>up to ₩1.5M</span></div></div><h3>Up to $1,000 a day</h3><p>A simple background shoot pays ₩80–120K, bit parts and supporting roles up to ₩1.5M. For shoots abroad, flights, hotel and meals are covered.</p></article>
+      <article class="card"><div class="step-art sm" aria-hidden="true"><div class="wbub"><small>Director</small>Look into the lens. Action!</div><div class="sbub"><small>You</small>Got it! I’m ready.</div><div class="tchips" style="justify-content:flex-start"><span><b>1,000</b> words on set</span></div></div><h3>No Korean needed</h3><p>On sets with foreigners everyone speaks English. 1,000 words of on-set English is enough. My vocabulary app is yours for free.</p><a class="cta" href="https://tinyurl.com/actorwords" target="_blank" rel="noopener" style="align-self:flex-start;margin-top:4px">Open the vocabulary<span class="ci" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M9 7h8v8"/></svg></span></a></article>
+    </div>
+    <div class="fees-head">
+      <span class="label">Fees</span>
+      <h2 id="h-fees">How much do beginner actors and models earn <span class="acc">in South Korea?</span></h2>
+    </div>
+    <div class="card w fees">
+      <div class="fees-scroll">
+        <table>
+          <thead><tr><th>Job</th><th>Pay</th></tr></thead>
+          <tbody>
+            <tr><td>Extra in a film, K-drama or music video<span class="sub">about 6 hours, meals and transport</span></td><td class="pay">₩80–120K</td></tr>
+            <tr><td>Overtime as an extra<span class="sub">if the shift runs long</span></td><td class="pay">+ about ₩13K per hour</td></tr>
+            <tr><td>Bit part without lines</td><td class="pay">₩300–500K</td></tr>
+            <tr><td>Bit part with lines<span class="sub">supporting role</span></td><td class="pay">₩500K – 1.5M</td></tr>
+            <tr><td>Skill role<span class="sub">fights, sports, dance, music</span></td><td class="pay">₩500K – 1.5M</td></tr>
+            <tr><td>Modeling shoot<span class="sub">lookbook, catalog, online store</span></td><td class="pay">₩500K – 1.5M</td></tr>
+            <tr><td>Brand commercial</td><td class="pay">₩500K – 1.5M</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="fees-sum">
+      <div class="card"><span class="mlab2">Working as an extra</span><b class="acc">₩2.7–4M</b><p>a month, about $2,000–3,000</p></div>
+      <div class="card"><span class="mlab2">Modeling shoots and bit parts</span><b class="acc">₩4–8M</b><p>a month, about $3,000–6,000</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- KOSTYA -->
+<section class="sec" id="kostya" aria-labelledby="h-k" style="padding-top:0">
+  <div class="haze" style="width:800px;height:800px;left:-260px;top:0" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="hero-photo-wide k-photo-wide">
+      <svg class="obj" style="width:clamp(56px,7vw,92px);right:-1%;top:-5%" aria-hidden="true"><use href="#star"/></svg>
+      <svg class="obj c" style="width:clamp(56px,6vw,80px);left:-1%;bottom:-5%" aria-hidden="true"><use href="#arc"/></svg>
+      <img src="img/kostya-dark.webp" alt="Konstantin Romanenko, portrait" loading="lazy">
+    </div>
+    <div class="k-text">
+      <span class="label">About me</span>
+      <h2 id="h-k">Konstantin Romanenko, <span class="acc">Netflix and Disney+ actor</span></h2>
+      <div class="k-story">
+        <p class="lead">My story: for 15 years I tried to break into film in Russia.</p>
+        <p class="lead">Then I came to Korea and, between factory shifts, started acting in films and ads. In my very first month I landed a big project, and then I got the E-6 actor visa.</p>
+        <p class="lead">Today I act in Netflix and Disney+ series, in ads for Samsung, Apple and Pepsi, and in K-pop music videos.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b class="acc">₩70M</b><span>earned in my first year in Korea</span></div>
+        <div class="stat"><b class="acc">60+</b><span>projects in film, ads and music videos</span></div>
+        <div class="stat"><b class="acc">$25M</b><span>budget of a superhero film I appear in</span></div>
+      </div>
+    </div>
+
+    <div class="rail-head"><div><span class="label">Filmography</span><h3 style="margin-top:10px">Films and <span class="acc">series</span></h3></div><div class="rail-btns"><button type="button" data-rail="films" data-dir="-1" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-rail="films" data-dir="1" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div></div>
+    <div class="rail posters" id="films" tabindex="0" aria-label="Films and series I appear in"></div>
+
+    <div class="rail-head"><div><span class="label">Brands</span><h3 style="margin-top:10px">Commercials</h3></div><div class="rail-btns"><button type="button" data-rail="ads" data-dir="-1" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-rail="ads" data-dir="1" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div></div>
+    <div class="rail wide" id="ads" tabindex="0" aria-label="Commercials I appear in"></div>
+
+    <div class="rail-head"><div><span class="label">K-pop</span><h3 style="margin-top:10px">Music videos</h3></div><div class="rail-btns"><button type="button" data-rail="clips" data-dir="-1" aria-label="Back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-rail="clips" data-dir="1" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div></div>
+    <div class="rail wide" id="clips" tabindex="0" aria-label="K-pop music videos I appear in"></div>
+  </div>
+</section>
+
+<!-- FIT -->
+<section class="sec" id="fit" aria-labelledby="h-fit" style="padding-top:0">
+  <svg class="obj b" style="width:64px;right:6%;top:4%" aria-hidden="true"><use href="#ball"/></svg>
+  <div class="wrap">
+    <div class="center">
+      <span class="label">Who it works for</span>
+      <h2 id="h-fit">Will it work <span class="acc">for you?</span></h2>
+    </div>
+    <div class="fit-grid">
+      <div class="card w">
+        <h3>It will work if you</h3>
+        <ul class="checks">
+          <li><span class="cb" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>want to act and are ready to spend a focused month on your portfolio</li>
+          <li><span class="cb" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>speak at least basic A1 English or are ready to improve it</li>
+          <li><span class="cb" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>live in Korea or are ready to come</li>
+          <li><span class="cb" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>are not afraid of the camera and like being photographed</li>
+        </ul>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <article class="card"><div class="step-art sm" aria-hidden="true"><span class="mlab">While you are at home</span><div class="ui">Portfolio <span class="ok">✓</span></div><div class="ui">Agency contract <span class="ok">✓</span></div><div class="route"><span>Home</span><span class="dash"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FF9A4D"><path d="M21 15.5v-2L13.5 9V3.5a1.5 1.5 0 0 0-3 0V9L3 13.5v2l7.5-2.3V19L8 20.5V22l4-1 4 1v-1.5L13.5 19v-5.8z"/></svg></span><span>Seoul</span></div></div><span class="tag">If you are not in Korea</span><h3>I live in another country</h3><p>While you are still at home, we build your portfolio together, sign a contract with an agency and line up your first shoots. You fly to Korea for work. On the full-support plan I also help with the E-6 visa, the move and housing.</p></article>
+        <article class="card"><div class="step-art sm" aria-hidden="true"><span class="mlab">Work on weekdays · shoots on weekends</span><div class="week"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span class="on">Sa</span><span class="on">Su</span></div><div class="sbub" style="align-self:flex-end"><small>Agency</small>Shoot on Saturday, does it work?</div></div><span class="tag">If you are already here</span><h3>I already live in Korea</h3><p>Keep your job and shoot on weekends. You can sign with an agency alongside your work or studies and pick shoots that fit your schedule.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HELP -->
+<section class="sec" id="help" aria-labelledby="h-help" style="padding-top:0">
+  <svg class="obj b" style="width:70px;right:4%;top:0" aria-hidden="true"><use href="#star"/></svg>
+  <div class="wrap">
+    <div class="center">
+      <span class="label">Training</span>
+      <h2 id="h-help">I help my students start working as actors and models <span class="acc">in South Korea</span></h2>
+    </div>
+    <div class="promo"><p>With my method, students build a portfolio, sign with agencies and earn <b>₩1.5–8M a month</b></p></div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="sec" id="results" aria-labelledby="h-res" style="padding-top:0">
+  <div class="haze" style="width:1100px;height:900px;left:50%;top:0;transform:translateX(-50%)" aria-hidden="true"></div>
+  <div class="dots" style="width:800px;height:600px;left:50%;top:6%;transform:translateX(-50%)" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="center" style="position:relative;z-index:2">
+      <span class="label">Student results</span>
+      <h2 id="h-res">They started from zero. <span class="acc">Now they are on set</span></h2>
+      <p class="lead">In films, K-dramas and commercials. One screen, one story.</p>
+    </div>
+    <div class="cases" id="cases"></div>
+  </div>
+</section>
+
+<!-- PATH -->
+<section class="sec" id="path" aria-labelledby="h-path" style="padding-top:0">
+  <svg class="obj" style="width:70px;left:3%;top:10%" aria-hidden="true"><use href="#star"/></svg>
+  <div class="wrap">
+    <div class="center">
+      <span class="label">How it works</span>
+      <h2 id="h-path">Just four steps <span class="acc">and you are on set</span></h2>
+    </div>
+    <ol class="steps">
+      <li class="card step"><div class="step-art" aria-hidden="true"><div class="thumbs"><img src="img/kostya-dark.webp" alt=""><img src="img/kostya-portrait.webp" alt=""><img src="img/kostya-dark.webp" alt=""></div><div class="tchips"><span><b>✓</b> Snaps</span><span><b>✓</b> Video intro</span><span><b>✓</b> Actor card</span></div><span class="num">1</span></div><h3>Build a portfolio to Korean standards</h3><p>Your portfolio is the most important document: without it agencies will not consider you. It has strict standards, and everything, from photos and video to cards, is made to Korean agency requirements: snaps, video intros, actor, model and skill cards. Agencies sign you based on your portfolio. No portfolio, no contract.</p><p>My students build their portfolio with me, step by step. If you have never made one, I help at every stage: I break the work into small steps and explain each one. You rehearse at home before a photo or video shoot, and afterwards I check that everything is done right.</p></li>
+      <li class="card step"><div class="step-art" aria-hidden="true"><div style="display:flex;justify-content:space-between;align-items:center"><span class="mlab">Outreach · 2 weeks</span><span class="mlab" style="color:#FF9A4D">250 / 250</span></div><div class="pbar"><i></i></div><div class="ui"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>To an agency manager<span class="ok">✓ sent</span></div><div class="ui"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>To an agency manager<span class="ok">✓ sent</span></div><div class="ui" style="opacity:.6"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>To an agency manager<span class="ok">✓ sent</span></div><span class="num">2</span></div><h3>Get into the databases of top agencies</h3><p>Hundreds of models and actors write to agencies’ general inboxes and never hear back. Why? A general inbox gets hundreds of emails, and yours is lost within a minute.</p><p>My students write not to the general inbox but to the personal contacts of managers at the 250 biggest agencies, which I provide. The outreach takes about 2 weeks: emails go out gradually, to each agency separately.</p><p>That is how you get into the databases of the largest South Korean agencies. At that moment Korea’s film and advertising industry learns there is a new actor or model, and it is you!</p></li>
+      <li class="card step"><div class="step-art" aria-hidden="true"><span class="mlab">Agency contract</span><div class="split"><span>YOU 80%</span><span>20%</span></div><div class="ui" style="flex-direction:column;align-items:stretch;gap:6px"><span class="mlab">Signature</span><div class="sig"><svg width="120" height="28" viewBox="0 0 120 28" fill="none"><path d="M3 20c10-14 16-16 18-8s-4 12 2 8 10-14 14-10-2 12 6 8 10-8 14-6 6 8 14 4 14-8 20-6 8 6 18 2" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><span class="okpill">Signed ✓</span></div></div><span class="num">3</span></div><h3>Sign with an agency</h3><p>Once you are in the databases, agencies send invitations: they want to sign you. Our job is to pick the biggest agency, one that works with Netflix, Disney+, LG, Samsung, BTS and other major brands.</p><p>The bigger the agency, the more shoots. The more major companies it works with, the faster you become known, like me.</p><p>Our second job is to negotiate good contract terms. Models and actors are usually offered 50/50. Together we negotiate <span class="mark">80% for you and 20% for the agency</span>, as it should be. That is how I, my students and other actors and models work.</p></li>
+      <li class="card step hl"><div class="step-art" aria-hidden="true"><div class="visa-card"><img src="img/kostya-portrait.webp" alt=""><div><span class="mlab">Republic of Korea · Visa</span><b>E-6</b><span style="font-size:12.5px;color:rgba(255,255,255,.75)">Artist · actor and model</span></div></div><div class="sbub">Visa ready. First shoot tomorrow 🎬</div><span class="num">4</span></div><h3>Get your visa and start shooting</h3><p><b style="color:var(--ink)">Visa first, then shoots.</b> You can work with any visa, and if you want to live in Korea and shoot regularly, the best option is the E-6 visa for actors and models. I help you get it in the program.</p><p>More about visas in the next section.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- VISA -->
+<section class="sec" id="visa" aria-labelledby="h-visa" style="padding-top:0">
+  <div class="haze" style="width:900px;height:700px;right:-300px;top:10%" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="center">
+      <span class="label">Visas</span>
+      <h2 id="h-visa">Which visa lets you work on set? <span class="acc">Any of them</span></h2>
+    </div>
+    <div class="visas">
+      <div class="visa"><b>E-6</b><span class="t">Artist visa</span><p>The main visa for actors and models. Details below.</p></div>
+      <div class="visa"><b>F-2, F-4, F-5, F-6</b><span class="t">Residence</span><p>Residence, overseas Korean, permanent residence and marriage visas. No work restrictions.</p></div>
+      <div class="visa"><b>D-2, D-4</b><span class="t">Student</span><p>University and language courses. You can work with a part-time work permit.</p></div>
+      <div class="visa"><b>E-7, E-9, H-2</b><span class="t">Work</span><p>And other work visas: you shoot in your free time alongside your main job.</p></div>
+      <div class="visa"><b>No visa</b><span class="t">K-ETA / visa-free</span><p>[Wording to confirm: working without a visa]</p></div>
+    </div>
+    <div class="e6">
+      <div class="card w intro">
+        <span class="seats">The best visa for actors and models</span>
+        <div class="big acc" aria-hidden="true">E-6</div>
+        <p>A professional visa for actors, models and artists. With it you live in Korea and legally work in films, series and ads. <b>In our program I help you get the E-6 visa.</b></p>
+      </div>
+      <div class="cols">
+        <div class="card">
+          <h3 style="margin-bottom:14px">Benefits</h3>
+          <ul class="checks">
+            <li><span class="cb" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Work legally as an actor and model: films, K-dramas, ads, music videos</li>
+            <li><span class="cb" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Live in Korea full time instead of leaving every 2–3 months</li>
+            <li><span class="cb" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Issued for 1–2 years, then renewed</li>
+            <li><span class="cb" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>Your agency handles the renewal if it sees potential in you</li>
+            <li><span class="cb" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>You can move to a bigger agency and keep growing</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:14px">How you get it</h3>
+          <ol class="stages">
+            <li>We build a portfolio to Korean agency standards</li>
+            <li>We sign with an agency that sponsors E-6 visas</li>
+            <li>The agency applies through Korea’s Ministry of Culture</li>
+            <li>We collect the documents: contract, portfolio, passport and more</li>
+            <li>You get the visa: the whole process takes about 3 months</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING -->
+<section class="sec" id="training" aria-labelledby="h-tr" style="padding-top:0">
+  <svg class="obj c" style="width:76px;right:4%;top:6%" aria-hidden="true"><use href="#play"/></svg>
+  <div class="wrap">
+    <div class="center">
+      <span class="label">Training</span>
+      <h2 id="h-tr">3 months with me <span class="acc">and you start shooting</span></h2>
+      <p class="lead">In my program we go through every step together.</p>
+    </div>
+    <ol class="months">
+      <li class="card month"><div class="step-art sm" aria-hidden="true"><div class="thumbs"><img src="img/kostya-dark.webp" alt=""><img src="img/kostya-portrait.webp" alt=""><img src="img/kostya-dark.webp" alt=""></div></div><span class="m acc">1<small>month</small></span><h3>Portfolio</h3><p>Snaps, video intros, actor, model and skill cards.</p></li>
+      <li class="card month"><div class="step-art sm" aria-hidden="true"><span class="mlab">Inbox</span><div class="ui"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Invitation from an agency<span class="ok">new</span></div><div class="ui"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FF9A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Invitation from an agency<span class="ok">new</span></div></div><span class="m acc">2<small>month</small></span><h3>Agencies and contract</h3><p>Outreach to 250+ agency databases, picking the best offer.</p></li>
+      <li class="card month"><div class="step-art sm" aria-hidden="true"><div style="display:flex;align-items:center;gap:14px"><svg class="clap" viewBox="0 0 48 42" fill="none" aria-hidden="true"><rect x="4" y="16" width="40" height="24" rx="4" fill="url(#gL)"/><path d="M4 16l4-11 38 6-3 5z" fill="#fff"/><path d="M14 6l-3 9M24 8l-3 9M34 9l-3 8" stroke="#222" stroke-width="3"/></svg><div><span class="mlab">E-6 visa ✓</span><div style="font-size:18px;font-weight:600;letter-spacing:-.02em">First shoot</div></div></div><div class="sbub"><small>Agency</small>Call time on set: 7:00</div></div><span class="m acc">3<small>month</small></span><h3>Visa and first shoots</h3><p>First the visa, then the shoots begin. On personal plans students often start shooting earlier.</p></li>
+    </ol>
+    <div class="perks">
+      <div class="card w perk"><div class="step-art xs" aria-hidden="true"><div class="wbub">Can you check my video intro? 🙏</div><div class="sbub">Watching it, notes in an hour</div></div><h3>Feedback every day</h3><p>Chat, video messages, calls. I reply myself.</p></div>
+      <div class="card w perk"><div class="step-art xs" aria-hidden="true"><span class="mlab">Your schedule</span><div class="week"><span>Mo</span><span class="on">Tu</span><span>We</span><span class="on">Th</span><span>Fr</span><span class="on">Sa</span><span>Su</span></div></div><h3>Flexible schedule</h3><p>No fixed group calls, so you can study alongside your job.</p></div>
+      <div class="card w perk"><div class="step-art xs" aria-hidden="true"><span class="mlab">Snaps · take</span><div class="rowbar"><span>1</span><span class="bar"><i style="width:40%"></i></span><span>reshoot</span></div><div class="rowbar"><span>2</span><span class="bar"><i style="width:70%"></i></span><span>reshoot</span></div><div class="rowbar"><span>3</span><span class="bar"><i style="width:100%"></i></span><span>100% ✓</span></div></div><h3>I am demanding</h3><p>A photo gets reshot until it meets agency requirements 100%.</p></div>
+      <div class="card w perk"><div class="step-art xs" aria-hidden="true"><div class="ui" style="flex-direction:column;align-items:flex-start;gap:4px"><span class="mlab">Contract · clause 1</span>I take you to your first paid shoot</div><span class="okpill" style="align-self:flex-end">Guarantee ✓</span></div><h3>Guarantee</h3><p>I take you to your first paid shoot. It is written into the contract.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="sec" id="modules" aria-labelledby="h-mod" style="padding-top:0">
+  <div class="wrap">
+    <div class="center">
+      <span class="label">What is inside</span>
+      <h2 id="h-mod">The ASIA4EVER program: <span class="acc">6 modules to your first role</span></h2>
+    </div>
+    <ol class="mods" id="mods"></ol>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section class="sec" id="prices" aria-labelledby="h-pr" style="padding-top:0">
+  <div class="haze" style="width:1000px;height:800px;left:50%;top:6%;transform:translateX(-50%)" aria-hidden="true"></div>
+  <svg class="obj" style="width:80px;left:4%;top:8%" aria-hidden="true"><use href="#star"/></svg>
+  <svg class="obj b" style="width:70px;right:4%;bottom:8%" aria-hidden="true"><use href="#arc"/></svg>
+  <div class="wrap">
+    <div class="center" style="position:relative;z-index:2">
+      <span class="label">Plans</span>
+      <h2 id="h-pr">A shoot guarantee <span class="acc">on every plan</span></h2>
+    </div>
+    <div class="tariffs">
+      <article class="card w tariff"><h3>Group with guarantee</h3><span class="for">Tighter budget, no rush</span><ul><li>6 training modules</li><li>Homework with feedback</li><li>Database of 250+ agencies</li><li>Group chat with me, up to 6 people</li><li>3 months of access</li><li>Shoot guarantee</li></ul></article>
+      <article class="card w tariff"><h3>Personal with guarantee</h3><span class="for">You want it fast and handle logistics yourself</span><ul><li>Everything in the group plan</li><li>Private chat with me</li><li>Zoom calls with me</li><li>6 months of access</li><li>Shoot guarantee from month 1</li></ul></article>
+      <article class="card tariff best"><span class="seats">Chosen by 50% of students</span><h3>Personal with full support</h3><span class="for">You are moving for the long term or want to work with me in person</span><ul><li>Everything in “Personal with guarantee”</li><li>Help with your portfolio shoot</li><li>Help with castings and your first shoot</li><li>Finding roles and projects</li><li>E-6 visa application</li><li>Help with the move, housing and work</li><li>In-person meetings with me</li><li>12 months of access, shoot guarantee from month 1</li></ul></article>
+    </div>
+    <div class="notes">
+      <p class="card"><b>Payback.</b> The training pays for itself in about 50 background shoots, roughly two months of regular work.</p>
+      <p class="card"><b>Contract.</b> Amounts, installments and the guarantee are written into the contract, which you can read before paying.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" aria-labelledby="h-faq" style="padding-top:0">
+  <div class="wrap">
+    <div class="center">
+      <span class="label">Questions</span>
+      <h2 id="h-faq">What people ask <span class="acc">before starting</span></h2>
+    </div>
+    <div class="faq" id="faqList"></div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section class="sec" id="apply" aria-labelledby="h-ap" style="padding-top:0">
+  <div class="haze" style="width:1100px;height:900px;left:50%;top:-10%;transform:translateX(-50%)" aria-hidden="true"></div>
+  <div class="dots" style="width:760px;height:520px;left:50%;top:0;transform:translateX(-50%)" aria-hidden="true"></div>
+  <svg class="obj" style="width:84px;left:6%;top:4%" aria-hidden="true"><use href="#play"/></svg>
+  <svg class="obj b" style="width:70px;right:7%;top:10%" aria-hidden="true"><use href="#star"/></svg>
+  <div class="wrap">
+    <div class="apply-box">
+      <span class="label">Apply</span>
+      <h2 id="h-ap">Want to train with me? <span class="acc">Here is how</span></h2>
+      <div class="apply-steps">
+        <div class="card w"><div class="step-art sm" aria-hidden="true"><span class="mlab">Applications today</span><div class="big-n acc">50–60</div><div class="ui">I take those ready to work hard for their dream</div><span class="num">1</span></div><h3>Interview</h3><p>You can only join through an interview: 50–60 people message me every day, and I take those I will enjoy working with. I am not looking for the most beautiful or talented. I take people who have long dreamed of acting and are ready to work hard for it.</p></div>
+        <div class="card w"><div class="step-art sm" aria-hidden="true"><div class="ui" style="justify-content:space-between"><span><span class="mlab">Zoom</span><br>Call with my assistant</span><span class="okpill">Join</span></div><div class="sbub"><small>Reminder</small>Install Zoom in advance</div><span class="num">2</span></div><h3>Call with my assistant</h3><p>If you were sent a link to my site, a date and time for a call with my assistant have already been scheduled for you.</p><p><b style="color:var(--ink)">Please be on time and install Zoom in advance.</b></p><div class="zoom-btns"><a class="store" href="https://apps.apple.com/app/zoom-workplace/id546505307" target="_blank" rel="noopener" aria-label="Download Zoom on the App Store"><svg width="26" height="30" viewBox="0 0 24 28" fill="#fff" aria-hidden="true"><path d="M19.6 14.9c0-3.1 2.5-4.6 2.6-4.7-1.4-2.1-3.7-2.4-4.5-2.4-1.9-.2-3.7 1.1-4.7 1.1-1 0-2.4-1.1-4-1.1-2.1 0-4 1.2-5.1 3.1-2.2 3.8-.6 9.3 1.6 12.3 1 1.5 2.3 3.1 3.9 3.1 1.6-.1 2.2-1 4.1-1 1.9 0 2.4 1 4.1 1 1.7 0 2.7-1.5 3.7-3 1.2-1.7 1.7-3.4 1.7-3.5-.1 0-3.3-1.3-3.3-4.9zM16.6 5.8c.9-1.1 1.4-2.5 1.3-4-1.2.1-2.7.8-3.6 1.9-.8.9-1.5 2.4-1.3 3.8 1.4.1 2.8-.7 3.6-1.7z"/></svg><span><small>Download on the</small><b>App Store</b></span></a><a class="store" href="https://play.google.com/store/apps/details?id=us.zoom.videomeetings" target="_blank" rel="noopener" aria-label="Get Zoom on Google Play"><svg width="26" height="28" viewBox="0 0 26 28" aria-hidden="true"><path d="M1.2.6C.9.9.7 1.4.7 2v24c0 .6.2 1.1.5 1.4L14.6 14 1.2.6z" fill="#00D7FE"/><path d="M19.1 18.5 14.6 14l4.5-4.5 5.4 3.1c1.5.9 1.5 2.3 0 3.2l-5.4 2.7z" fill="#FFCE00"/><path d="M19.1 18.5 14.6 14 1.2 27.4c.5.5 1.3.6 2.2.1l15.7-9z" fill="#FF3A44"/><path d="M19.1 9.5 3.4.5C2.5 0 1.7.1 1.2.6L14.6 14l4.5-4.5z" fill="#00F076"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© ASIA4EVER · Konstantin Romanenko</span><span>South Korea · 2026</span></div></footer>
+
+<script>
+(function(){
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const films = [
+    ['Reawaken Man: The Red','Film · 2026','Mercenary, action and fights','voskr'],
+    ['Okay, Madam 2','Film · 2026','Lead foreign role','okmadam2'],
+    ['A Shop for Killers 2','Disney+','Russian mafia boss','shopkillers2'],
+    ['Four Hands','Netflix','Russian musician','fourhands'],
+    ['Trigger','Netflix','American gangster','trigger'],
+    ['Good Boy','JTBC','Russian mafia mercenary','goodboy'],
+    ['The Tyrant','Disney+','','tyrant'],
+    ['Red Swan','Disney+','','redswan'],
+    ['The Fiery Priest 2','Disney+','','fierypriest'],
+    ['Strong Girl Nam-soon','Netflix','','stronggirl'],
+    ['Amazon Bullseye','Netflix','','amazon'],
+    ['As You Stood By','Netflix','',''],
+    ['Hide','Coupang Play','','hide'],
+    ['The Kidnapping Day','ENA','','kidnap'],
+    ['Cinderella Game','KBS','','cinderella'],
+    ['Without Blood or Tears','KBS','','twosisters'],
+    ['A Virtuous Business','JTBC','','virtuous']
+  ];
+  const ads = [
+    ['Samsung Galaxy Watch 6','with Son Heung-min','ad-samsung-watch'],
+    ['Samsung Galaxy Z Flip6','with Pani Bottle','ad-samsung-flip'],
+    ['Apple iPhone 15 Pro','with NewJeans','ad-iphone'],
+    ['Pepsi','with IVE','ad-pepsi'],
+    ['Gatorade','with Son Heung-min','ad-gatorade'],
+    ['Pizza Hut','lead role','ad-pizzahut-cowboy'],
+    ['Pizza Hut','with Kim Gye-ran','ad-pizzahut-kim'],
+    ['Kia','','ad-kia'],
+    ['NongHyup Bank (NH)','with Byeon Woo-seok','ad-nh'],
+    ['Carrot insurance','with Go Youn-jung','ad-carrot'],
+    ['BTS × OREO','with BTS',''],
+    ['DKNY','','']
+  ];
+  const clips = [
+    ['Stray Kids','wrestler role','clip-straykids'],
+    ['ATEEZ','music video','clip-ateez'],
+    ['SHINee','music video','clip-shinee'],
+    ['NEXZ','new JYP group','clip-nexz'],
+    ['IU','music video','clip-iu'],
+    ['VANNER','music video','clip-vanner']
+  ];
+  const pic = (img, title, alt) => `<div class="pic">${img ? `<img src="img/${img}.webp" alt="${esc(alt)}" loading="lazy">` : `<div class="ph">${esc(title)}</div>`}</div>`;
+  document.getElementById('films').innerHTML = films.map(([t,p,r,img]) =>
+    `<figure class="tile">${pic(img ? 'p-'+img : '', t, 'Poster: '+t)}<figcaption style="display:flex;flex-direction:column;gap:3px"><b>${esc(t)}</b><span class="plat">${esc(p)}</span>${r?`<span class="role">${esc(r)}</span>`:''}</figcaption></figure>`).join('');
+  const wide = (list, prefix) => list.map(([t,n,img]) =>
+    `<figure class="tile">${pic(img, t, prefix+t)}<figcaption style="display:flex;flex-direction:column;gap:3px"><b>${esc(t)}</b>${n?`<span class="role">${esc(n)}</span>`:''}</figcaption></figure>`).join('');
+  document.getElementById('ads').innerHTML = wide(ads, 'Commercial: ');
+  document.getElementById('clips').innerHTML = wide(clips, 'Music video: ');
+
+  const cases = [
+    {n:'Igor, 31', m:'Native Russian, advanced English', inc:'up to ₩8M', note:'a month, about $6,000', b:'Factory and construction work 5–6 days a week, ₩2M a month (about $1,400).', a:'Acts for Netflix and other projects and no longer does background work. Busted the myth that tattooed people get little work in Asia.', pre:'c-igor-before', post:'c-igor-after', with:'c-igor-kostya'},
+    {n:'Valentin, 42', m:'Native Russian, advanced English', inc:'up to ₩5M', note:'a month, about $3,500', b:'Farm work and side jobs 5–6 days a week, up to ₩3M a month (about $2,100).', a:'Works on everything from background roles and music videos to Netflix, 2–4 times a week.', pre:'c-val-before', post:'c-val-after', with:'c-val-kostya'},
+    {n:'Roman, 39', m:'Native Russian, conversational English, no Korean', inc:'up to ₩3M', note:'a month, about $2,000', b:'Worked at a recording studio in Vladivostok for 100K rubles a month (about $1,200).', a:'Followed his dream from scratch and now works as an extra and on Netflix 2–3 times a week.', pre:'c-roman-before', post:'c-roman-after'},
+    {n:'Nara, 30', m:'Native Russian, advanced English, Chinese and Korean', inc:'E-6 visa', note:'and her first shoot before she even arrived in Korea', b:'Worked as an interpreter in China and was exhausted.', a:'Followed her dream from scratch, got the E-6 model visa and moved to Korea. Landed her first shoot before arriving. Has already worked on Netflix, the K-drama “Umma” and other projects.', pre:'c-nara-before', post:'c-nara-after'},
+    {n:'Yuri, 22', m:'Conversational English, no Korean', inc:'from ₩1.5M', note:'a month, about $1,200', b:'Studied in Russia and worked as a courier, up to 50K rubles a month.', a:'Works on various projects 2–3 times a week.'},
+    {n:'Alexey, 34', m:'Started with no English or Korean', inc:'from ₩1.5M', note:'a month, from $1,000', b:'Welder in Israel, worked without days off.', a:'Works as an extra and on Netflix 2–3 times a week.'}
+  ];
+  document.getElementById('cases').innerHTML = cases.map((c,i) => `
+    <article class="case${c.pre?'':' no-photo'}">
+      ${c.pre?`<div class="cphotos">
+        <figure><img src="img/${c.pre}.webp" alt="${esc(c.n)} before training" loading="lazy"><figcaption>Before</figcaption></figure>
+        <figure class="aft"><img src="img/${c.post}.webp" alt="${esc(c.n)} after training" loading="lazy"><figcaption>After</figcaption></figure>
+        ${c.with?`<figure class="with"><img src="img/${c.with}.webp" alt="${esc(c.n)} with Konstantin on set" loading="lazy"><figcaption>With Kostya on set</figcaption></figure>`:''}
+      </div>`:''}
+      <div class="info">
+        <span class="meta">Story ${i+1} of ${cases.length} · ${esc(c.m)}</span>
+        <h3>${esc(c.n)}</h3>
+        <div><div class="inc acc">${esc(c.inc)}</div><p class="meta" style="margin-top:8px">${esc(c.note)}</p></div>
+        <div class="ba"><div><b>Before</b>${esc(c.b)}</div><div class="now"><b>After</b>${esc(c.a)}</div></div>
+      </div>
+    </article>`).join('');
+
+const modArt=[
+ '<span class="mlab">3-month plan</span><div class="ui">Month 1 · portfolio <span class="ok">✓</span></div><div class="ui">Month 2 · agencies</div><div class="ui" style="opacity:.6">Month 3 · shoots</div>',
+ '<div class="thumbs"><img src="img/kostya-dark.webp" alt=""><img src="img/kostya-portrait.webp" alt=""><img src="img/kostya-dark.webp" alt=""></div>',
+ '<div style="display:flex;justify-content:space-between"><span class="mlab">Agency databases</span><span class="mlab" style="color:#FF9A4D">250+</span></div><div class="pbar"><i></i></div><div class="ui">Managers’ personal contacts <span class="ok">✓</span></div>',
+ '<div class="wbub"><small>Agency</small>Casting invitation: Netflix K-drama</div><div class="sbub">I’ll be there!</div>',
+ '<div class="ladder"><div style="height:35%">extra</div><div style="height:65%">bit part</div><div style="height:100%">role</div></div>',
+ '<div style="display:flex;align-items:center;gap:14px"><svg class="clap" viewBox="0 0 48 42" fill="none" aria-hidden="true"><rect x="4" y="16" width="40" height="24" rx="4" fill="url(#gL)"/><path d="M4 16l4-11 38 6-3 5z" fill="#fff"/><path d="M14 6l-3 9M24 8l-3 9M34 9l-3 8" stroke="#222" stroke-width="3"/></svg><div><span class="mlab">First role</span><div style="font-size:18px;font-weight:600">Action!</div></div></div><div class="tchips" style="justify-content:flex-start"><span><b>1,000</b> words</span><span>On-set etiquette</span></div>'
+];
+  const mods = [
+    ['Your career launch plan for Korea','How the industry works, what kinds of projects and agencies exist, what income to expect.','a personal 3-month plan'],
+    ['A portfolio for Korea for $0','Snaps and angles, video intros, actor, model and skill cards.','a finished portfolio'],
+    ['250+ agency databases','Managers’ personal contacts, an email template, outreach in 2 weeks.','you are in agency databases'],
+    ['Casting invitations','Netflix, Disney+, Samsung, LG, Kia. How to choose an agency and a contract.','a signed contract'],
+    ['Castings and roles','How to apply for projects and grow from background work to roles paying $1,000–5,000 a month.','regular invitations'],
+    ['Your first role','How to behave on set, 1,000 words of on-set English.','your first paid shoot']
+  ];
+  document.getElementById('mods').innerHTML = mods.map(([t,d,r],i) =>
+    `<li class="card mod"><div class="step-art sm" aria-hidden="true">${modArt[i]||""}</div><span class="label">Module ${i+1}</span><h3>${esc(t)}</h3><p>${esc(d)}</p><p class="res">Result: <b>${esc(r)}</b></p></li>`).join('');
+
+  const faq = [
+    ['I have no acting experience','Every student in the stories above started from zero. Agencies care more about the right portfolio than past roles.'],
+    ['I don’t speak Korean','The industry speaks English with foreigners. My English is B1 and I don’t speak Korean, and it doesn’t stop me from working.'],
+    ['I’m over 35','Valentin is 42, Roman is 39. Productions need people of all ages.'],
+    ['I have tattoos','Igor works for Netflix with tattoos. Small tattoos are covered with makeup on set.'],
+    ['I can’t quit my job','Agency contracts are freelance: you choose your shoots and can work on weekends.'],
+    ['Which visa do I need?','You can work with any visa, see the Visas section. The best visa for actors and models is E-6, and I help you get it in the program.'],
+    ['Do people get turned away at the border?','None of my students have.'],
+    ['Can I train together with my partner?','Yes. Have your partner send me their photos separately: you can train and shoot together.'],
+    ['What if it doesn’t work out?','I take you to your first paid shoot, and it is written into the contract. That’s why I check your type before we start.'],
+    ['Can I pay in installments?','Yes, every plan has an installment option. Amounts and terms are in the contract.']
+  ];
+  document.getElementById('faqList').innerHTML = faq.map(([q,a],i) =>
+    `<details id="q${i}"><summary>${esc(q)}<span class="pm" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary><p>${esc(a)}</p></details>`).join('');
+
+  document.querySelectorAll('.rail-btns button').forEach(b => {
+    b.addEventListener('click', () => {
+      const rail = document.getElementById(b.dataset.rail);
+      if (rail) rail.scrollBy({ left: Number(b.dataset.dir) * rail.clientWidth * 0.8, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+<style>.lang{position:fixed;z-index:50;top:calc(env(safe-area-inset-top,0px) + 12px);right:max(12px,env(safe-area-inset-right,0px));display:flex;background:#fff;border-radius:999px;padding:4px;box-shadow:0 6px 20px rgba(20,20,20,.12),0 0 0 1px rgba(20,20,20,.08);font:600 12px/1 "JetBrains Mono",monospace;letter-spacing:.12em}.lang a,.lang span{padding:8px 12px;border-radius:999px;text-decoration:none;color:#55554F}.lang span{background:linear-gradient(180deg,#FF9A4D,#F2521B);color:#fff}</style>
+<nav class="lang" aria-label="Language"><a href="index.html" hreflang="ru">RU</a><span>EN</span></nav>
