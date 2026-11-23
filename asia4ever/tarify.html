@@ -524,14 +524,10 @@ td.pay{white-space:normal}
 
 .pbox .price-upfront{display:flex;align-items:baseline;gap:8px;flex-wrap:nowrap}.pbox .price-upfront s{font:inherit;color:inherit;white-space:nowrap}
 
-/* Main price: compact accent line, no enclosing box. */
-.pbox .price-option.price-total{margin-top:20px;padding:4px 0 4px 12px;border:0;border-left:3px solid var(--o2);border-radius:0;background:transparent;box-shadow:none}
-.pbox .price-total .rl{font-size:clamp(12px,1.1vw,15px);font-weight:700;color:var(--ink);letter-spacing:0;white-space:nowrap}
-.pbox .price-option.price-total .now{font-size:clamp(36px,3.4vw,54px);line-height:1.1;white-space:nowrap;overflow-wrap:normal}
-.pbox .price-option.price-total .cur{font-size:18px;line-height:1.35;white-space:nowrap}
-.best .pbox .price-option.price-total{background:transparent;border-color:#ff9a4d;box-shadow:none}
-.best .pbox .price-total .rl{color:#ffd1ac}
-@media(max-width:480px){.pbox .price-option.price-total{padding:4px 0 4px 10px}.pbox .price-option.price-total .now{font-size:36px}}
+/* Uniform price typography; other payment options have a subtly lighter background. */
+.pbox .price-option{padding:12px;border-radius:10px}
+.pbox .price-option:not(.price-total){background:rgba(255,255,255,.08)}
+.pbox .price-option.price-total{background:transparent}
 </style>
 <section class="sec" id="results" aria-labelledby="h-res" style="padding-top:0">
   <div class="haze" style="width:1100px;height:900px;left:50%;top:0;transform:translateX(-50%)" aria-hidden="true"></div>
