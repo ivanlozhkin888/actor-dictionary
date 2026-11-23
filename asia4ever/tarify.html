@@ -521,6 +521,18 @@ td.pay{white-space:normal}
 .pbox .price-option:not(.price-total){background:rgba(255,255,255,.08)}
 .best .pbox .price-option:not(.price-total){background:transparent}
 .pbox .price-option.price-total{background:transparent}
+
+@media(max-width:600px){
+ .tslide{padding:24px 18px!important;min-width:0}
+ .tslide h2{font-size:clamp(26px,7vw,36px);line-height:1.15;overflow-wrap:anywhere}
+ .tsl-grid,.tsl-l,.tsl-r{min-width:0}
+ .tslide .pbox{padding:20px 16px;min-width:0}
+ .tslide .pbox .price-option .now{font-size:34px;line-height:1.15}
+ .tslide .pbox .cur{font-size:16px;line-height:1.5}
+ .tslide .seats{left:18px;right:auto;max-width:calc(100% - 36px);font-size:10px;letter-spacing:.08em}
+ .tslide .tl li span,.tslide .rbox li span{min-width:0;overflow-wrap:anywhere}
+ .pbox .discount{font-size:14px}
+}
 </style>
 
 <section class="sec tsl" id="tarif-1" style="padding-top:0"><div class="wrap">
@@ -536,7 +548,7 @@ td.pay{white-space:normal}
 <b class="cur">404 000 ₽ <span class="discount">(−81 000 ₽)</span></b>
 </div>
 <div class="price-option"><span class="rl">Рассрочка на 3 части (без банка)</span>
-<b class="now acc">$1 996,67</b>
+<b class="now acc">$1 996</b>
 <b class="cur">2 646 667 ₩</b>
 <b class="cur">161 667 ₽</b>
 </div>
@@ -584,7 +596,7 @@ td.pay{white-space:normal}
 <b class="cur">121 000 ₽ <span class="discount">(−41 000 ₽)</span></b>
 </div>
 <div class="price-option"><span class="rl">Рассрочка на 3 части (без банка)</span>
-<b class="now acc">$663,33</b>
+<b class="now acc">$663</b>
 <b class="cur">880 000 ₩</b>
 <b class="cur">53 667 ₽</b>
 </div>
