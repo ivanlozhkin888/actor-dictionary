@@ -439,6 +439,14 @@ td.pay{white-space:normal}
 
 .hero-sq{max-width:640px}
 .hero-sq img,.hero-sq img{aspect-ratio:1/1!important;object-position:center 22%!important}
+
+.price-option{display:flex;flex-direction:column;gap:6px;min-width:0}
+.price-option + .price-option{margin-top:18px;padding-top:18px;border-top:1px solid #ffe0cc}
+.best .price-option + .price-option{border-top-color:rgba(255,255,255,.16)}
+.pbox .price-option .now{font-size:clamp(34px,3.5vw,54px);overflow-wrap:anywhere}
+.pbox .price-option .cur{display:block;font-weight:700}
+.payment-period{font-size:16px}
+.pbox .discount{display:inline-block;font-size:16px;font-weight:600;letter-spacing:normal;white-space:nowrap;vertical-align:middle}
 </style>
 
 <!-- shared gradients for the glossy shapes -->
@@ -471,6 +479,14 @@ td.pay{white-space:normal}
 .tt.best .pbox{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}.tt.best .pbox .inst{color:#B9B9B2}.tt.best .pbox .inst b{color:#fff}
 .tt .seats{position:absolute;top:-13px;right:20px}
 .note{margin-top:18px;font-size:14px;color:var(--muted);text-align:center;position:relative;z-index:2}
+
+.price-option{display:flex;flex-direction:column;gap:6px;min-width:0}
+.price-option + .price-option{margin-top:18px;padding-top:18px;border-top:1px solid #ffe0cc}
+.best .price-option + .price-option{border-top-color:rgba(255,255,255,.16)}
+.pbox .price-option .now{font-size:clamp(34px,3.5vw,54px);overflow-wrap:anywhere}
+.pbox .price-option .cur{display:block;font-weight:700}
+.payment-period{font-size:16px}
+.pbox .discount{display:inline-block;font-size:16px;font-weight:600;letter-spacing:normal;white-space:nowrap;vertical-align:middle}
 </style>
 <div class="wrap"><header class="topbar"><span class="brand">ASIA<i>4</i>EVER</span><a href="./">← Сайт программы</a></header></div>
 <section class="sec" id="modules" aria-labelledby="h-mod" style="padding-top:24px">
@@ -495,6 +511,14 @@ td.pay{white-space:normal}
 .tslide.best .pbox{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}.tslide.best .pbox .inst{color:#B9B9B2}.tslide.best .pbox .inst b{color:#fff}
 .tslide .seats{position:absolute;top:-13px;right:28px}
 .tsl{min-height:100svh;display:flex;align-items:center;padding:40px 0!important}.tsl>.wrap{width:100%}
+
+.price-option{display:flex;flex-direction:column;gap:6px;min-width:0}
+.price-option + .price-option{margin-top:18px;padding-top:18px;border-top:1px solid #ffe0cc}
+.best .price-option + .price-option{border-top-color:rgba(255,255,255,.16)}
+.pbox .price-option .now{font-size:clamp(34px,3.5vw,54px);overflow-wrap:anywhere}
+.pbox .price-option .cur{display:block;font-weight:700}
+.payment-period{font-size:16px}
+.pbox .discount{display:inline-block;font-size:16px;font-weight:600;letter-spacing:normal;white-space:nowrap;vertical-align:middle}
 </style>
 <section class="sec" id="results" aria-labelledby="h-res" style="padding-top:0">
   <div class="haze" style="width:1100px;height:900px;left:50%;top:0;transform:translateX(-50%)" aria-hidden="true"></div>
@@ -511,17 +535,32 @@ td.pay{white-space:normal}
 <section class="sec tsl" id="tarif-1" style="padding-top:0"><div class="wrap">
 <article class="card tslide best">
 <div class="tsl-head"><span class="label">Тариф 1 · 12 месяцев</span><h2>Личный с сопровождением</h2><p class="sub">Для тех, кто переезжает надолго или хочет работать с Костей вживую</p></div>
-<div class="tsl-grid"><div class="tsl-l"><ul class="tl"><li><span><b>Индивидуально</b> с Константином Романенко</span></li><li><span>6 модулей и домашние задания с проверкой</span></li><li><span>Личный чат с Костей</span></li><li><span>Живые встречи с Костей</span></li><li><span>Помощь со съёмкой портфолио</span></li><li><span>Помощь с кастингами и первой реальной съёмкой</span></li><li><span>Помощь с переездом, жильём и работой</span></li></ul><div class="rbox"><span class="rl">Результат</span><ul><li><span>Портфолио</span></li><li><span>База 250+ агентств</span></li><li><span>Подписанный контракт</span></li><li><span>Оформление визы E-6</span></li><li><span><b>Гарантия съёмки с 1-го месяца</b></span></li></ul></div></div><div class="tsl-r"><div class="pbox"><span class="rl">Сразу <s>$8 000</s></span><b class="now acc">$4 990</b><span class="cur">6 620 000 ₩ · 404 000 ₽</span><span class="inst">В рассрочку <b>$5 990</b> · 7 940 000 ₩ · 485 000 ₽</span></div></div></div>
+<div class="tsl-grid"><div class="tsl-l"><ul class="tl"><li><span><b>Индивидуально</b> с Константином Романенко</span></li><li><span>6 модулей и домашние задания с проверкой</span></li><li><span>Личный чат с Костей</span></li><li><span>Живые встречи с Костей</span></li><li><span>Помощь со съёмкой портфолио</span></li><li><span>Помощь с кастингами и первой реальной съёмкой</span></li><li><span>Помощь с переездом, жильём и работой</span></li></ul><div class="rbox"><span class="rl">Результат</span><ul><li><span>Портфолио</span></li><li><span>База 250+ агентств</span></li><li><span>Подписанный контракт</span></li><li><span>Оформление визы E-6</span></li><li><span><b>Гарантия съёмки с 1-го месяца</b></span></li></ul></div></div><div class="tsl-r"><div class="pbox">
+<div class="price-option"><span class="rl">Сразу <s>$8 000</s></span><b class="now acc">$4 990</b><b class="cur">6 620 000 ₩</b><b class="cur">404 000 ₽</b></div>
+<div class="price-option"><span class="rl">Рассрочка (полная стоимость)</span><b class="now acc">$5 990</b><b class="cur">7 940 000 ₩</b><b class="cur">485 000 ₽</b></div>
+<div class="price-option"><span class="rl">Рассрочка на 3 части (без банка)</span><b class="now acc">$1 996,67</b><b class="cur">2 646 667 ₩</b><b class="cur">161 667 ₽</b><span class="payment-period">за один платёж</span></div>
+<div class="price-option"><span class="rl">Рассрочка на 24 части (с банком)</span><b class="now acc">$249</b><b class="cur">330 833 ₩</b><b class="cur">20 208 ₽</b><span class="payment-period">в месяц</span></div>
+</div></div></div>
 </article></div></section>
 <section class="sec tsl" id="tarif-2" style="padding-top:0"><div class="wrap">
 <article class="card tslide w"><span class="seats">Выбирают 50% учеников</span>
 <div class="tsl-head"><span class="label">Тариф 2 · 6 месяцев</span><h2>Личный с гарантией</h2><p class="sub">Для тех, кто хочет быстрый результат</p></div>
-<div class="tsl-grid"><div class="tsl-l"><ul class="tl"><li><span><b>Индивидуально</b> с Константином Романенко</span></li><li><span>6 модулей и домашние задания с проверкой</span></li><li><span>Личный чат с Костей</span></li></ul><div class="rbox"><span class="rl">Результат</span><ul><li><span>Портфолио</span></li><li><span>База 250+ агентств</span></li><li><span>Подписанный контракт</span></li><li><span><b>Гарантия съёмки с 1-го месяца</b></span></li></ul></div></div><div class="tsl-r"><div class="pbox"><span class="rl">Сразу <s>$5 000</s></span><b class="now acc">$2 990</b><span class="cur">3 960 000 ₩ · 242 000 ₽</span><span class="inst">В рассрочку <b>$3 750</b> · 4 970 000 ₩ · 304 000 ₽</span></div></div></div>
+<div class="tsl-grid"><div class="tsl-l"><ul class="tl"><li><span><b>Индивидуально</b> с Константином Романенко</span></li><li><span>6 модулей и домашние задания с проверкой</span></li><li><span>Личный чат с Костей</span></li></ul><div class="rbox"><span class="rl">Результат</span><ul><li><span>Портфолио</span></li><li><span>База 250+ агентств</span></li><li><span>Подписанный контракт</span></li><li><span><b>Гарантия съёмки с 1-го месяца</b></span></li></ul></div></div><div class="tsl-r"><div class="pbox">
+<div class="price-option"><span class="rl">Сразу <s>$3 750</s></span><b class="now acc">$2 990 <span class="discount">(скидка $760)</span></b><b class="cur">3 960 000 ₩ <span class="discount">(скидка $760)</span></b><b class="cur">242 000 ₽ <span class="discount">(скидка $760)</span></b></div>
+<div class="price-option"><span class="rl">Рассрочка (полная стоимость)</span><b class="now acc">$3 750</b><b class="cur">4 970 000 ₩</b><b class="cur">304 000 ₽</b></div>
+<div class="price-option"><span class="rl">Рассрочка на 3 части (без банка)</span><b class="now acc">$1 250,00</b><b class="cur">1 656 667 ₩</b><b class="cur">101 333 ₽</b><span class="payment-period">за один платёж</span></div>
+<div class="price-option"><span class="rl">Рассрочка на 24 части (с банком)</span><b class="now acc">$156</b><b class="cur">207 083 ₩</b><b class="cur">12 667 ₽</b><span class="payment-period">в месяц</span></div>
+</div></div></div>
 </article></div></section>
 <section class="sec tsl" id="tarif-3" style="padding-top:0"><div class="wrap">
 <article class="card tslide w">
 <div class="tsl-head"><span class="label">Тариф 3 · 3 месяца</span><h2>Группа с гарантией</h2><p class="sub">Самый доступный вход в программу</p></div>
-<div class="tsl-grid"><div class="tsl-l"><ul class="tl"><li><span><b>Группа до 8 человек</b> с Константином Романенко</span></li><li><span>6 модулей и домашние задания с проверкой</span></li><li><span>Общий чат в Телеграм с Константином</span></li></ul><div class="rbox"><span class="rl">Результат</span><ul><li><span>Портфолио</span></li><li><span>База 250+ агентств</span></li><li><span>Подписанный контракт</span></li><li><span><b>Гарантия съёмки</b></span></li></ul></div></div><div class="tsl-r"><div class="pbox"><span class="rl">Сразу <s>$3 000</s></span><b class="now acc">$1 490</b><span class="cur">1 980 000 ₩ · 121 000 ₽</span><span class="inst">В рассрочку <b>$1 990</b> · 2 640 000 ₩ · 161 000 ₽</span></div></div></div>
+<div class="tsl-grid"><div class="tsl-l"><ul class="tl"><li><span><b>Группа до 8 человек</b> с Константином Романенко</span></li><li><span>6 модулей и домашние задания с проверкой</span></li><li><span>Общий чат в Телеграм с Константином</span></li></ul><div class="rbox"><span class="rl">Результат</span><ul><li><span>Портфолио</span></li><li><span>База 250+ агентств</span></li><li><span>Подписанный контракт</span></li><li><span><b>Гарантия съёмки</b></span></li></ul></div></div><div class="tsl-r"><div class="pbox">
+<div class="price-option"><span class="rl">Сразу <s>$3 000</s></span><b class="now acc">$1 490</b><b class="cur">1 980 000 ₩</b><b class="cur">121 000 ₽</b></div>
+<div class="price-option"><span class="rl">Рассрочка (полная стоимость)</span><b class="now acc">$1 990</b><b class="cur">2 640 000 ₩</b><b class="cur">161 000 ₽</b></div>
+<div class="price-option"><span class="rl">Рассрочка на 3 части (без банка)</span><b class="now acc">$663,33</b><b class="cur">880 000 ₩</b><b class="cur">53 667 ₽</b><span class="payment-period">за один платёж</span></div>
+<div class="price-option"><span class="rl">Рассрочка на 24 части (с банком)</span><b class="now acc">$82</b><b class="cur">110 000 ₩</b><b class="cur">6 708 ₽</b><span class="payment-period">в месяц</span></div>
+</div></div></div>
 </article></div></section>
 <section class="sec" id="prices" aria-labelledby="h-pr" style="padding-top:0">
   <div class="haze" style="width:1000px;height:800px;left:50%;top:6%;transform:translateX(-50%)" aria-hidden="true"></div>
@@ -532,17 +571,32 @@ td.pay{white-space:normal}
     <div class="tariffs"><article class="card tariff tt best"><span class="label">Тариф 1 · 12 месяцев</span><h3>Личный с сопровождением</h3>
 <ul class="tl"><li><span><b>Индивидуально</b> с Константином Романенко</span></li><li><span>6 модулей и домашние задания с проверкой</span></li><li><span>Личный чат с Костей</span></li><li><span>Живые встречи с Костей</span></li><li><span>Помощь со съёмкой портфолио</span></li><li><span>Помощь с кастингами и первой реальной съёмкой</span></li><li><span>Помощь с переездом, жильём и работой</span></li></ul>
 <div class="rbox"><span class="rl">Результат</span><ul><li><span>Портфолио</span></li><li><span>База 250+ агентств</span></li><li><span>Подписанный контракт</span></li><li><span>Оформление визы E-6</span></li><li><span><b>Гарантия съёмки с 1-го месяца</b></span></li></ul></div>
-<div class="pbox"><span class="rl">Сразу <s>$8 000</s></span><b class="now acc">$4 990</b><span class="cur">6 620 000 ₩ · 404 000 ₽</span><span class="inst">В рассрочку <b>$5 990</b> · 7 940 000 ₩ · 485 000 ₽</span></div>
+<div class="pbox">
+<div class="price-option"><span class="rl">Сразу <s>$8 000</s></span><b class="now acc">$4 990</b><b class="cur">6 620 000 ₩</b><b class="cur">404 000 ₽</b></div>
+<div class="price-option"><span class="rl">Рассрочка (полная стоимость)</span><b class="now acc">$5 990</b><b class="cur">7 940 000 ₩</b><b class="cur">485 000 ₽</b></div>
+<div class="price-option"><span class="rl">Рассрочка на 3 части (без банка)</span><b class="now acc">$1 996,67</b><b class="cur">2 646 667 ₩</b><b class="cur">161 667 ₽</b><span class="payment-period">за один платёж</span></div>
+<div class="price-option"><span class="rl">Рассрочка на 24 части (с банком)</span><b class="now acc">$249</b><b class="cur">330 833 ₩</b><b class="cur">20 208 ₽</b><span class="payment-period">в месяц</span></div>
+</div>
 </article><article class="card tariff tt w"><span class="seats">Выбирают 50% учеников</span><span class="label">Тариф 2 · 6 месяцев</span><h3>Личный с гарантией</h3>
 <ul class="tl"><li><span><b>Индивидуально</b> с Константином Романенко</span></li><li><span>6 модулей и домашние задания с проверкой</span></li><li><span>Личный чат с Костей</span></li></ul>
 <div class="rbox"><span class="rl">Результат</span><ul><li><span>Портфолио</span></li><li><span>База 250+ агентств</span></li><li><span>Подписанный контракт</span></li><li><span><b>Гарантия съёмки с 1-го месяца</b></span></li></ul></div>
-<div class="pbox"><span class="rl">Сразу <s>$5 000</s></span><b class="now acc">$2 990</b><span class="cur">3 960 000 ₩ · 242 000 ₽</span><span class="inst">В рассрочку <b>$3 750</b> · 4 970 000 ₩ · 304 000 ₽</span></div>
+<div class="pbox">
+<div class="price-option"><span class="rl">Сразу <s>$3 750</s></span><b class="now acc">$2 990 <span class="discount">(скидка $760)</span></b><b class="cur">3 960 000 ₩ <span class="discount">(скидка $760)</span></b><b class="cur">242 000 ₽ <span class="discount">(скидка $760)</span></b></div>
+<div class="price-option"><span class="rl">Рассрочка (полная стоимость)</span><b class="now acc">$3 750</b><b class="cur">4 970 000 ₩</b><b class="cur">304 000 ₽</b></div>
+<div class="price-option"><span class="rl">Рассрочка на 3 части (без банка)</span><b class="now acc">$1 250,00</b><b class="cur">1 656 667 ₩</b><b class="cur">101 333 ₽</b><span class="payment-period">за один платёж</span></div>
+<div class="price-option"><span class="rl">Рассрочка на 24 части (с банком)</span><b class="now acc">$156</b><b class="cur">207 083 ₩</b><b class="cur">12 667 ₽</b><span class="payment-period">в месяц</span></div>
+</div>
 </article><article class="card tariff tt w"><span class="label">Тариф 3 · 3 месяца</span><h3>Группа с гарантией</h3>
 <ul class="tl"><li><span><b>Группа до 8 человек</b> с Константином Романенко</span></li><li><span>6 модулей и домашние задания с проверкой</span></li><li><span>Общий чат в Телеграм с Константином</span></li></ul>
 <div class="rbox"><span class="rl">Результат</span><ul><li><span>Портфолио</span></li><li><span>База 250+ агентств</span></li><li><span>Подписанный контракт</span></li><li><span><b>Гарантия съёмки</b></span></li></ul></div>
-<div class="pbox"><span class="rl">Сразу <s>$3 000</s></span><b class="now acc">$1 490</b><span class="cur">1 980 000 ₩ · 121 000 ₽</span><span class="inst">В рассрочку <b>$1 990</b> · 2 640 000 ₩ · 161 000 ₽</span></div>
+<div class="pbox">
+<div class="price-option"><span class="rl">Сразу <s>$3 000</s></span><b class="now acc">$1 490</b><b class="cur">1 980 000 ₩</b><b class="cur">121 000 ₽</b></div>
+<div class="price-option"><span class="rl">Рассрочка (полная стоимость)</span><b class="now acc">$1 990</b><b class="cur">2 640 000 ₩</b><b class="cur">161 000 ₽</b></div>
+<div class="price-option"><span class="rl">Рассрочка на 3 части (без банка)</span><b class="now acc">$663,33</b><b class="cur">880 000 ₩</b><b class="cur">53 667 ₽</b><span class="payment-period">за один платёж</span></div>
+<div class="price-option"><span class="rl">Рассрочка на 24 части (с банком)</span><b class="now acc">$82</b><b class="cur">110 000 ₩</b><b class="cur">6 708 ₽</b><span class="payment-period">в месяц</span></div>
+</div>
 </article></div>
-    <p class="note">Курс на 03.11.2026: 1 $ ≈ 1 326 ₩ ≈ 80,97 ₽ (ЦБ РФ). Суммы в вонах и рублях округлены.</p>
+    <p class="note">Курс на 03.11.2026: 1 $ 1 326 ₩ 80,97 ₽ (ЦБ РФ). Суммы в вонах и рублях округлены. Ежемесячные платежи в долларах указаны для рассрочки на 24 месяца. Суммы в вонах и рублях приблизительные.</p>
   </div>
 </section>
 
