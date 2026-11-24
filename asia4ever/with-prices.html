@@ -440,6 +440,78 @@ td.pay{white-space:normal}
 .hero-sq{max-width:640px}
 .hero-sq img,.hero-sq img{aspect-ratio:1/1!important;object-position:center 22%!important}
 </style>
+<style id="tariff-styles">
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.topbar .brand{font-family:var(--mono);font-weight:600;letter-spacing:.12em;font-size:14px}.topbar .brand i{font-style:normal;color:var(--o2)}
+.topbar a{color:var(--ink-2);text-decoration:none;font-size:15px}.topbar a:hover{color:var(--o2)}
+.tt{gap:14px}.tt .label{margin-top:6px}
+.tt .tl{list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.tt .tl li{display:flex;gap:10px;align-items:flex-start;font-size:16px;line-height:1.45}
+.tt .tl li::before{content:"";width:16px;height:16px;border-radius:5px;background:linear-gradient(180deg,var(--o1),var(--o2));flex:none;margin-top:3px}
+.rbox{background:var(--soft);border-radius:18px;padding:16px 18px}.rbox ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.tt .rbox ul{border:0;padding:0;margin-top:8px}.tt .rbox li{font-size:15px}.tt .rbox li::before{width:12px;height:12px;border-radius:4px;margin-top:5px}
+.rl{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.rl s{margin-left:6px}
+.pbox{margin-top:auto;border-radius:20px;padding:18px 20px;background:#fff7f1;box-shadow:inset 0 0 0 1px #ffe0cc;display:flex;flex-direction:column;gap:4px}
+.pbox .now{font-size:clamp(46px,4.6vw,60px);font-weight:700;letter-spacing:-.04em;line-height:1.05}
+.pbox .cur{font-weight:600;font-size:16px}.pbox .inst{font-size:14px;color:var(--ink-2)}.pbox .inst b{color:var(--ink)}
+.tt.best .rbox{background:rgba(255,255,255,.07)}.tt.best .tl{border-color:rgba(255,255,255,.12)}.tt.best .rl{color:#9a9a94}.tt.best .rbox li{color:#eee}
+.tt.best .pbox{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}.tt.best .pbox .inst{color:#B9B9B2}.tt.best .pbox .inst b{color:#fff}
+.tt .seats{position:absolute;top:-13px;left:20px;right:auto}
+.note{margin-top:18px;font-size:14px;color:var(--muted);text-align:center;position:relative;z-index:2}
+
+.price-option{display:flex;flex-direction:column;gap:6px;min-width:0}
+.price-option + .price-option{margin-top:18px;padding-top:18px;border-top:1px solid #ffe0cc}
+.best .price-option + .price-option{border-top-color:rgba(255,255,255,.16)}
+.pbox .price-option .now{font-size:clamp(34px,3.5vw,54px);overflow-wrap:anywhere}
+.pbox .price-option .cur{display:block;font-weight:700}
+.payment-period{font-size:16px}
+.pbox .discount{display:inline-block;font-size:16px;font-weight:600;letter-spacing:normal;white-space:nowrap;vertical-align:middle}
+
+.tslide{gap:22px;padding:clamp(26px,4vw,52px)!important}.tslide h2{margin:8px 0 6px}.tslide .sub{color:var(--ink-2);font-size:18px}
+.tslide.best{background:var(--dark);color:#fff}.tslide.best .sub{color:#B9B9B2}.tslide.best h2{color:#fff}
+.tsl-grid{display:grid;gap:22px}@media(min-width:900px){.tsl-grid{grid-template-columns:1.3fr 1fr;gap:40px;align-items:stretch}.tsl-r{display:flex}.tsl-r .pbox{flex:1;justify-content:center}}
+.tsl-l{display:flex;flex-direction:column;gap:18px}
+.tslide .tl{list-style:none;margin:0;padding:14px 0 0;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.tslide .tl li{display:flex;gap:10px;align-items:flex-start;font-size:17px;line-height:1.45}
+.tslide .tl li::before{content:"";width:16px;height:16px;border-radius:5px;background:linear-gradient(180deg,var(--o1),var(--o2));flex:none;margin-top:4px}
+.tslide .rbox li{display:flex;gap:10px;font-size:16px}.tslide .rbox li::before{content:"";width:12px;height:12px;border-radius:4px;background:linear-gradient(180deg,var(--o1),var(--o2));flex:none;margin-top:6px}
+.tslide .pbox{margin-top:0;padding:28px 30px}.tslide .pbox .now{font-size:clamp(56px,6vw,84px)}.tslide .pbox .cur{font-size:18px}.tslide .pbox .inst{font-size:16px}
+.tslide.best .tl{border-color:rgba(255,255,255,.12)}.tslide.best .rbox{background:rgba(255,255,255,.07)}.tslide.best .rbox li{color:#eee}.tslide.best .rl{color:#9a9a94}
+.tslide.best .pbox{background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}.tslide.best .pbox .inst{color:#B9B9B2}.tslide.best .pbox .inst b{color:#fff}
+.tslide .seats{position:absolute;top:-13px;left:28px;right:auto}
+.tsl{min-height:100svh;display:flex;align-items:center;padding:40px 0!important}.tsl>.wrap{width:100%}
+
+.price-option{display:flex;flex-direction:column;gap:6px;min-width:0}
+.price-option + .price-option{margin-top:18px;padding-top:18px;border-top:1px solid #ffe0cc}
+.best .price-option + .price-option{border-top-color:rgba(255,255,255,.16)}
+.pbox .price-option .now{font-size:clamp(34px,3.5vw,54px);overflow-wrap:anywhere}
+.pbox .price-option .cur{display:block;font-weight:700}
+.payment-period{font-size:16px}
+.pbox .discount{display:inline-block;font-size:16px;font-weight:600;letter-spacing:normal;white-space:nowrap;vertical-align:middle}
+
+.best .pbox .cur,.best .pbox .payment-period{color:#D1D1CC}
+
+.pbox .price-upfront{display:flex;align-items:baseline;gap:8px;flex-wrap:nowrap}.pbox .price-upfront s{font:inherit;color:inherit;white-space:nowrap}
+
+/* Uniform price typography; other payment options have a subtly lighter background. */
+.pbox .price-option:not(.price-total){background:rgba(255,255,255,.08)}
+.best .pbox .price-option:not(.price-total){background:transparent}
+.pbox .price-option.price-total{background:transparent}
+
+@media(max-width:600px){
+ .tslide{padding:24px 18px!important;min-width:0}
+ .tslide h2{font-size:clamp(26px,7vw,36px);line-height:1.15;overflow-wrap:anywhere}
+ .tsl-grid,.tsl-l,.tsl-r{min-width:0}
+ .tslide .pbox{padding:20px 16px;min-width:0}
+ .tslide .pbox .price-option .now{font-size:34px;line-height:1.15}
+ .tslide .pbox .cur{font-size:16px;line-height:1.5}
+ .tslide .seats{left:18px;right:auto;max-width:calc(100% - 36px);font-size:10px;letter-spacing:.08em}
+ .tslide .tl li span,.tslide .rbox li span{min-width:0;overflow-wrap:anywhere}
+ .pbox .discount{font-size:14px}
+}
+</style>
+</head>
+<body>
 
 <!-- shared gradients for the glossy shapes -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -957,3 +1029,6 @@ const modArt=[
 </script>
 <style>.lang{position:fixed;z-index:50;top:calc(env(safe-area-inset-top,0px) + 12px);right:max(12px,env(safe-area-inset-right,0px));display:flex;background:#fff;border-radius:999px;padding:4px;box-shadow:0 6px 20px rgba(20,20,20,.12),0 0 0 1px rgba(20,20,20,.08);font:600 12px/1 "JetBrains Mono",monospace;letter-spacing:.12em}.lang a,.lang span{padding:8px 12px;border-radius:999px;text-decoration:none;color:#55554F}.lang span{background:linear-gradient(180deg,#FF9A4D,#F2521B);color:#fff}</style>
 <nav class="lang" aria-label="Язык"><span>RU</span><a href="en.html" hreflang="en">EN</a></nav>
+
+</body>
+</html>
